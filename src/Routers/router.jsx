@@ -1,7 +1,7 @@
-import App from './App.jsx'
-import Login from './Pages/PaginaLogin/Login.jsx'
-import NovoUsuario from './Pages/PaginaNovoUsuario/NovoUsuario.jsx'
-import PaginaErro from './Pages/Erro/PaginaErro.jsx'
+import App from '../App.jsx'
+import Login from '../Pages/PaginaLogin/Login.jsx'
+import NovoUsuario from '../Pages/PaginaNovoUsuario/NovoUsuario.jsx'
+import PaginaErro from '../Pages/Erro/PaginaErro.jsx'
 
 import { createBrowserRouter } from 'react-router-dom'
 
