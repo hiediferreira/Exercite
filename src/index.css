@@ -1,0 +1,14 @@
+/* Aqui posso definir as minhas variáveis*/
+
+/* fonte */
+
+:root {
+    --verdeLogo: #29B473;
+}
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

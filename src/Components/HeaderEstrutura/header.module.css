@@ -1,0 +1,21 @@
+.header{
+    height: 5em;
+    background-image: linear-gradient(to right, #323439, #484B52, #6c6f74);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.headerLogo{
+    display: flex;
+    align-items: baseline;
+}
+
+.headerLogo>img{
+    margin-right: 0.2em;
+}
+
+.headerLogo>h2{
+    color: #53c38f;
+}

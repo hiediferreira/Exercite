@@ -1,0 +1,11 @@
+.navbar a{
+    margin-left: 1em;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.678);
+    font-size: 24px;
+}
+
+.navbar a:hover{
+    color: white;
+}
+
