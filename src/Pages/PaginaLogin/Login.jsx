@@ -1,5 +1,12 @@
 import NavbarInicio from "../../Components/Navbar/NavbarInicio"
 import { Link } from "react-router-dom"
+import { TextField, Button }from '@mui/material';
+import BotaoSenha from '../../Components/atoms/BotaoSenha/BotaoSenha'
+
+import theme from '../../Components/Temas/temaBotao'
+import { ThemeProvider } from '@mui/material/styles'
+
+import styles from './login.module.css'
 
 function Login(){   
 
@@ -7,19 +14,37 @@ function Login(){
         <div>
             <NavbarInicio />
 
-            <div>
-                <h1>Seja bem vinda(o) ao Exercite!</h1>
-                <img src="./src/assets/Logo/logo2.png" alt="" width={'80px'}  />
-                <form>
-                    <label htmlFor="email">Email</label><br />
-                    <input type="email" placeholder="Digite o e-mail"/>
-                    <br />
-                    <label htmlFor="senha">Senha</label><br />
-                    <input type="password" placeholder="Digite a senha"/>
-                    <br />
-                    <button type="submit">Login</button>               
+            <div className={styles.containerLogin}>
+                <h1 className={styles.center}>Seja bem vinda(o) ao</h1>
+                <div className={styles.logoLogin}>
+                    <h2>Exercite</h2>
+                    <img src="./src/assets/Logo/logo2.png" alt="" width={"80px"} />
+                </div>
+
+                <form className={styles.formLogin}>
+                    <TextField 
+                        sx={{width: 243, "my":2}}
+                        type="email"
+                        variant="standard"
+                        color="success"                            
+                        label="E-mail" 
+                        placeholder="Digite o e-mail"
+                    />
+
+                    <BotaoSenha />
+                    
+                    <ThemeProvider theme={theme}>
+                        <Button 
+                            type="submit" 
+                            variant="contained"
+                            color="primary"
+                            sx={{"my":2}}>
+                                Login
+                        </Button>  
+                    </ThemeProvider>      
                 </form>
-                <p>Não possui uma conta? <Link to='/novoUsuario'>Cadastre-se</Link></p>
+
+                <p className={styles.center}  >Não possui uma conta? <Link to='/novoUsuario' className={styles.linkLogin}>Cadastre-se</Link></p>
             </div>
         </div>
     )

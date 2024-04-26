@@ -1,6 +1,7 @@
 .header{
     height: 5em;
-    background-image: linear-gradient(to right, #323439, #484B52, #6c6f74);
+    /* background-image: linear-gradient(to right, #323439, #484B52, #6c6f74); */
+    background-image: linear-gradient(to right, #484B52,  #6c6f74);
     display: flex;
     justify-content: space-between;
     align-items: center;
