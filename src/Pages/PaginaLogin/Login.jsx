@@ -1,7 +1,6 @@
 import NavbarInicio from "../../Components/Navbar/NavbarInicio"
 import { Link } from "react-router-dom"
 import { TextField, Button } from '@mui/material'
-import BotaoSenha from '../../Components/atoms/BotaoSenha/BotaoSenha'
 
 import theme from '../../Components/Temas/temaBotao'
 import { ThemeProvider } from '@mui/material/styles'
@@ -30,8 +29,6 @@ function Login(){
                         label="E-mail" 
                         placeholder="Digite o e-mail"
                     />
-
-                    <BotaoSenha />
                     
                     <ThemeProvider theme={theme}>
                         <Button 
