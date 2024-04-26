@@ -1,0 +1,19 @@
+.containerNovoUsuario{
+    background-image: linear-gradient(to bottom, #757981,  #d9dce0);
+
+    width: 500px;
+    margin: 2em auto;  
+    padding: 1em;  
+    border: 1px solid black;
+    border-radius: 20px; 
+}
+
+.formNovoUsuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerNovoUsuario h3{
+    text-align: center;
+}

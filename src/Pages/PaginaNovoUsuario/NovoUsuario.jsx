@@ -1,50 +1,143 @@
-import NavbarInicio from "../../Components/Navbar/NavbarInicio"
+import NavbarInicio from '../../Components/Navbar/NavbarInicio'
+import BotaoSenha from '../../Components/atoms/BotaoSenha/BotaoSenha'
+import { TextField, Button }from '@mui/material'
+
+import theme from '../../Components/Temas/temaBotao'
+import { ThemeProvider } from '@mui/material/styles'
+
+import styles from './novoUsuario.module.css'
+
 function NovoUsuario(){
     
     return(
         <div>
             <NavbarInicio/>
 
-            <form >
-                <label htmlFor="">Nome</label> <br />
-                <input type="text" placeholder="Informe seu nome"/>
-                <br />
-                <label htmlFor="">CPF</label> <br />
-                <input type="text" placeholder="Informe seu CPF"/>
-                <br />
-                <label htmlFor="">Data Nascimento</label> <br />
-                <input type="date" />
-                <br />
-                <label htmlFor="">E-mail</label> <br />
-                <input type="email" placeholder="Informe seu e-mail"/>
-                <br />
-                <label htmlFor="">Senha</label> <br />
-                <input type="password" placeholder="Cadastre uma senha"/>
-                <br />
-                <label htmlFor="">CEP</label> <br />
-                <input type="text" placeholder="Digite seu CEP" maxLength={8} />
-                <br />
-                <label htmlFor="">Rua</label> <br />
-                <input type="text" placeholder="Logradouro"/>
-                <br />
-                <label htmlFor="">Bairro</label> <br />
-                <input type="text" placeholder="Bairro"/>
-                <br />
-                <label htmlFor="">Número</label> <br />
-                <input type="number" placeholder="Número"/>
-                <br />
-                <label htmlFor="">Complemento</label> <br />
-                <input type="text" placeholder="Complemento (se houver)"/>
-                <br />
-                <label htmlFor="">Cidade</label> <br />
-                <input type="text" placeholder="Cidade"/>
-                <br />
-                <label htmlFor="">Estado</label> <br />
-                <input type="text" placeholder="Estado"/>
-                <br />
+            <div className={styles.containerNovoUsuario}>
+                <h3>Preencha os campos abaixo para cadastrar-se!</h3>
+                <form className={styles.formNovoUsuario}>
+                    <TextField 
+                        sx={{width: 243, "mb":2, "mt":1}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="Nome" 
+                        placeholder="Digite o nome"
+                    />
 
-                <button type="submit">Cadastrar</button>
-            </form>
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="CPF (somente dígitos)" 
+                        placeholder="Digite o CPF"
+                    />
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="date"
+                        label="Data de nascimento" 
+                    />
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="email"
+                        label="E-mail" 
+                        placeholder="Digite o e-mail"
+                    />
+
+                    <BotaoSenha />
+
+                    <TextField 
+                        sx={{width: 243, "my":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="CEP (somente dígitos)" 
+                        placeholder="Digite o CEP"
+                    />
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="Logradouro" 
+                        placeholder="Digite o logradouro"
+                    />  
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="bairro" 
+                        placeholder="Digite o bairro"
+                    />
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="number"
+                        label="Número" 
+                        placeholder="Digite o número"
+                    />      
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="Complemento" 
+                        placeholder="Digite o complemento se houver"
+                    />
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="Cidade" 
+                        placeholder="Digite a cidade"
+                    />
+
+                    <TextField 
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"     
+                        
+                        type="text"
+                        label="Estado" 
+                        placeholder="Digite o estado"
+                    />
+
+                    <ThemeProvider theme={theme}>
+                        <Button 
+                            type="submit" 
+                            variant="contained"
+                            color="primary"
+                            sx={{"my":2}}>
+                                Cadastrar
+                        </Button>  
+                    </ThemeProvider>
+                </form>
+            </div>
         </div>
     )
 }
