@@ -1,6 +1,6 @@
 import NavbarInicio from '../../Components/Navbar/NavbarInicio'
 import BotaoSenha from '../../Components/atoms/BotaoSenha/BotaoSenha'
-import { TextField, Button }from '@mui/material'
+import { TextField, Button, MenuItem }from '@mui/material'
 
 import theme from '../../Components/Temas/temaBotao'
 import { ThemeProvider } from '@mui/material/styles'
@@ -25,6 +25,22 @@ function NovoUsuario(){
                         label="Nome" 
                         placeholder="Digite o nome"
                     />
+
+                    <TextField 
+                        select
+                        sx={{width: 243, "mb":2}}
+                        variant="standard"
+                        color="success"
+
+                        label="Sexo" >
+
+                        <MenuItem value={"Feminino"}>
+                            Feminino              
+                        </MenuItem>
+                        <MenuItem value={"Masculino"}>
+                            Masculino              
+                        </MenuItem>
+                    </TextField>
 
                     <TextField 
                         sx={{width: 243, "mb":2}}
