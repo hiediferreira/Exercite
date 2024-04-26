@@ -17,3 +17,7 @@
 .containerNovoUsuario h3{
     text-align: center;
 }
+
+.msgErro{
+    font-size: 10px;
+}
