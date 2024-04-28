@@ -78,8 +78,8 @@ function NovoUsuario(){
                     />
                     {errors?.email && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.email.message}</p>}
 
+                    <label htmlFor="senha">Senha</label>
                     <div className={styles.containerSenha}>
-                        <label htmlFor="senha">Senha</label>
                         <input type={showPassword ? 'text' : 'password'}
                         placeholder="Informe uma senha"
                             {...register("senha", {
