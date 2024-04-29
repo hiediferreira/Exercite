@@ -13,19 +13,41 @@ import { useState } from 'react';
 
 import styles from './novoUsuario.module.css'
 
+
 function NovoUsuario(){
+    //Função para o input senha com opção de mostrar ou ocultar a senha
+    //toda vez que clicar o botão recebe o estado oposto!
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show); 
-    //toda vez que clicar o botão recebe o estado oposto
 
+    //Formulário
     const {
-        register,   //registra os campos de entrada do formulário
-        handleSubmit, //lida com a submissão do formulário
+        register,      //registra os campos de entrada do formulário
+        handleSubmit,  //lida com a submissão do formulário
+        setValue,      //qual nome do input que desejo setar e qual valor vou passar para ele
+        getValues,     //qual nome do input que quero pegar os valores naquele momento
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
     function testaForm(formValue){
-        console.log(formValue)  
+        console.log(formValue)   //apenas testando se os valores foram recebidos corretamente
+    }
+
+    //ViaCep
+    const buscarCep = async () => {
+        let cep = getValues("cepUsuario")
+        if(!!cep && cep.length === 8){ //se o cep for válido e tiver 8 digitos
+            try{
+                let response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                let dados = await response.json()
+                setValue('ruaUsuario', dados.logradouro)
+                setValue('bairroUsuario', dados.bairro)
+                setValue('cidadeUsuario', dados.localidade)
+                setValue('estadoUsuario', dados.uf)
+            } catch (err){
+                console.log(err)
+            }
+        }
     }
 
     return(
@@ -38,7 +60,7 @@ function NovoUsuario(){
                 <form className={styles.formNovoUsuario} onSubmit={handleSubmit(testaForm)}>
 
                     <label htmlFor="nomeUsuario">Nome</label>
-                    <input  type="text" placeholder="Informe o nome" 
+                    <input  type="text" placeholder="Informe o nome" name="nomeUsuario"
                         {...register("nomeUsuario", {
                             required: "Campo obrigatório!",
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
@@ -53,7 +75,7 @@ function NovoUsuario(){
                     </select>
 
                     <label htmlFor="cpf">CPF</label>
-                    <input  type="text" placeholder="Informe o CPF (somente dígitos)" maxLength={11}
+                    <input  type="text" placeholder="Informe o CPF (somente dígitos)" maxLength={11} name="cpf"
                         {...register("cpf", {
                             required: "Campo obrigatório!",
                             minLength: {value:11, message:"Deve possuir 11 caracteres"}
@@ -62,7 +84,7 @@ function NovoUsuario(){
                     {errors?.cpf && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.cpf.message}</p>}
 
                     <label htmlFor="dataNasc">Data de nascimento</label>
-                    <input  type="date"
+                    <input  type="date" name="dataNasc"
                         {...register("dataNasc", {
                             required: "Campo obrigatório!"
                         })}                                                   
@@ -70,7 +92,7 @@ function NovoUsuario(){
                     {errors?.dataNasc && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.dataNasc.message}</p>}
 
                     <label htmlFor="email">E-mail</label>
-                    <input  type="email" placeholder="Informe o e-mail" 
+                    <input  type="email" placeholder="Informe o e-mail" name="email"
                         {...register("email", {
                             required: "Campo obrigatório!",
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
@@ -81,7 +103,7 @@ function NovoUsuario(){
                     <label htmlFor="senha">Senha</label>
                     <div className={styles.containerSenha}>
                         <input type={showPassword ? 'text' : 'password'}
-                        placeholder="Informe uma senha"
+                        placeholder="Informe uma senha" name="senha"
                             {...register("senha", {
                                 required: "Campo obrigatório!",
                                 minLength: {value:6, message:"Deve possuir no mínimo 6"}
@@ -94,16 +116,17 @@ function NovoUsuario(){
                     {errors?.senha && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.senha.message}</p>}
 
                     <label htmlFor="cepUsuario">CEP</label>
-                    <input  type="text" placeholder="Informe o CEP (somente dígitos)" maxLength={8}
+                    <input  type="text" placeholder="Informe o CEP (somente dígitos)" maxLength={8} name="cepUsuario"
                         {...register("cepUsuario", {
                             required: "Campo obrigatório!",
-                            minLength: {value:8, message:"Deve possuir 8 caracteres"}
+                            minLength: {value:8, message:"Deve possuir 8 caracteres"},
+                            onBlur: () => buscarCep()
                         })}                                                   
                     />
                     {errors?.cepUsuario && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.cepUsuario.message}</p>}
 
                     <label htmlFor="ruaUsuario">Rua</label>
-                    <input  type="text" placeholder="Informe a rua" 
+                    <input  type="text" placeholder="Informe a rua" name="ruaUsuario"
                         {...register("ruaUsuario", {
                             required: "Campo obrigatório!",
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
@@ -131,7 +154,7 @@ function NovoUsuario(){
                     <label htmlFor="complementoUsuario">Complemento</label>
                     <input  type="text" placeholder="Complemento (se houver)" 
                         {...register("complementoUsuario", {
-                            required: "Campo obrigatório!",
+                            required: false,
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
                         })}                                                   
                     />
