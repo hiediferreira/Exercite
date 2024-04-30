@@ -29,7 +29,7 @@ function NovoUsuario(){
     } = useForm()
 
     const [novoUsuario, setNovoUsuario] = useState({
-        nomeUsuario: "",
+        nomeUsuario:"",
         sexo: "",
         cpf: "",
         dataNasc: "",
@@ -37,33 +37,36 @@ function NovoUsuario(){
         senha: "",
         cepUsuario: "",
         ruaUsuario: "",
-        bairroUsuario: "",
         numeroUsuario: "",
         complementoUsuario: "",
+        bairroUsuario: "",
         cidadeUsuario: "",
         estadoUsuario: "",
         usuarioAtivo: "false"
     })
 
-    function testaForm(formValue){
+    function testaForm(formValue){       
         console.log('formvalue',formValue)   //apenas testando se os valores foram recebidos corretamente
 
-        setNovoUsuario([novoUsuario, formValue])
+        setNovoUsuario((d) => ({...d, ...formValue}))
 
-        cadastrarUsuario()
+        console.log('novoUsuario', novoUsuario) 
+        
+        cadastrarUsuario(novoUsuario)
     }
 
-    function cadastrarUsuario(){
+    function cadastrarUsuario(novoUsuario){
         fetch("http://localhost:3000/usuarios", {
             method: "POST",  //adicionar usuário à API
-            body: JSON.stringify(usuarios),                    
+            body: JSON.stringify(novoUsuario),                    
             headers: {
                 'Contente-Type': 'application/json'
-            }
+            },
         })
-        .then(() => console.log(novoUsuario))
+        .then(() => console.log('OK'))
         .catch((erro) => console.log(erro))
     }
+
 
     //ViaCep
     const buscarCep = async () => {
@@ -89,13 +92,13 @@ function NovoUsuario(){
         setUsuarios nos garente que os dados estão atualizados, pois, 
         ele nos mostra o estado atual da variável usuarios 
     */
-    const [usuarios, setUsuarios] = useState([])  
-    useEffect(() => {
-        fetch("http://localhost:3000/usuarios")
-        .then(response => response.json())
-        .then(data => setUsuarios(data))
-        .catch(error => console.log(error))
-    }, [])
+    // const [usuarios, setUsuarios] = useState([])  
+    // useEffect(() => {
+    //     fetch("http://localhost:3000/usuarios")
+    //     .then(response => response.json())
+    //     .then(data => setUsuarios(data))
+    //     .catch(error => console.log(error))
+    // }, [])
 
 
  
@@ -103,10 +106,6 @@ function NovoUsuario(){
     return(
         <div>
             <NavbarInicio/>
-
-            {!!usuarios && usuarios.map(user => (
-                <h3 key={user.id}>{user.cidadeUsuario} - {user.estadoUsuario}</h3>
-            ))}
 
             <div className={styles.containerNovoUsuario}>
                 <h3>Preencha os campos abaixo para cadastrar-se!</h3>
