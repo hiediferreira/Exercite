@@ -34,7 +34,7 @@ function NovoUsuario(){
 
     function cadastrarUsuario(novoUsuario){
         fetch("http://localhost:3000/usuarios", {
-            method: "POST",  //adicionar usuário à API
+            method: 'POST',  //adicionar usuário à API
             body: JSON.stringify(novoUsuario),                    
             headers: {
                 'Contente-Type': 'application/json'
