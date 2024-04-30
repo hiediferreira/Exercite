@@ -11,6 +11,7 @@
             "cepUsuario": "57303753",
             "ruaUsuario": "Rua Cravo Branco",
             "numeroUsuario": 915,
+            "complementoUsuario": "",
             "bairroUsuario": "Guaribas",
             "cidadeUsuario": "Arapiraca",
             "estadoUsuario": "AL",
@@ -27,6 +28,7 @@
             "cepUsuario": "51030771",
             "ruaUsuario": "Rua Joaquim Pinheiro",
             "numeroUsuario": 571,
+            "complementoUsuario": "",
             "bairroUsuario": "Imbiribeira",
             "cidadeUsuario": "Recife",
             "estadoUsuario": "PE",
@@ -43,6 +45,7 @@
             "cepUsuario": "12721643",
             "ruaUsuario": "Rua Professor Francisco Coutinho",
             "numeroUsuario": 57,
+            "complementoUsuario": "",
             "bairroUsuario": "Loteamento Residencial Vista Verde",
             "cidadeUsuario": "Cruzeiro",
             "estadoUsuario": "SP",
@@ -59,6 +62,7 @@
             "cepUsuario": "24466170",
             "ruaUsuario": "Rua Paranavaí",
             "numeroUsuario": 114,
+            "complementoUsuario": "",
             "bairroUsuario": "Boa Vista",
             "cidadeUsuario": "São Gonçalo",
             "estadoUsuario": "RJ",
@@ -75,10 +79,12 @@
             "cepUsuario": "92410692",
             "ruaUsuario": "Rua das Canjeranas",
             "numeroUsuario": 192,
+            "complementoUsuario": "Apto 01",
             "bairroUsuario": "Igara",
             "cidadeUsuario": "Canoas",
             "estadoUsuario": "RS",
             "usuarioAtivo": "false"
         }
-    ]
+    ],
+    "locais": []
 }
