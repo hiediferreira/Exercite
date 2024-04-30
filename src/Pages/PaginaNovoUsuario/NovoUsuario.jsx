@@ -9,10 +9,9 @@ import theme from '../../Components/Temas/temaBotao'
 import { ThemeProvider } from '@mui/material/styles'
 
 import { useForm } from 'react-hook-form'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from './novoUsuario.module.css'
-
 
 function NovoUsuario(){
     //Função para o input senha com opção de mostrar ou ocultar a senha
@@ -29,8 +28,41 @@ function NovoUsuario(){
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
+    const [novoUsuario, setNovoUsuario] = useState({
+        nomeUsuario: "",
+        sexo: "",
+        cpf: "",
+        dataNasc: "",
+        email: "",
+        senha: "",
+        cepUsuario: "",
+        ruaUsuario: "",
+        bairroUsuario: "",
+        numeroUsuario: "",
+        complementoUsuario: "",
+        cidadeUsuario: "",
+        estadoUsuario: "",
+        usuarioAtivo: "false"
+    })
+
     function testaForm(formValue){
-        console.log(formValue)   //apenas testando se os valores foram recebidos corretamente
+        console.log('formvalue',formValue)   //apenas testando se os valores foram recebidos corretamente
+
+        setNovoUsuario([novoUsuario, formValue])
+
+        cadastrarUsuario()
+    }
+
+    function cadastrarUsuario(){
+        fetch("http://localhost:3000/usuarios", {
+            method: "POST",  //adicionar usuário à API
+            body: JSON.stringify(usuarios),                    
+            headers: {
+                'Contente-Type': 'application/json'
+            }
+        })
+        .then(() => console.log(novoUsuario))
+        .catch((erro) => console.log(erro))
     }
 
     //ViaCep
@@ -50,9 +82,31 @@ function NovoUsuario(){
         }
     }
 
+
+    ///////////////////////////////////////////////////////
+    /*
+        usuarios é a lista que contém os usuários cadastrados;
+        setUsuarios nos garente que os dados estão atualizados, pois, 
+        ele nos mostra o estado atual da variável usuarios 
+    */
+    const [usuarios, setUsuarios] = useState([])  
+    useEffect(() => {
+        fetch("http://localhost:3000/usuarios")
+        .then(response => response.json())
+        .then(data => setUsuarios(data))
+        .catch(error => console.log(error))
+    }, [])
+
+
+ 
+
     return(
         <div>
             <NavbarInicio/>
+
+            {!!usuarios && usuarios.map(user => (
+                <h3 key={user.id}>{user.cidadeUsuario} - {user.estadoUsuario}</h3>
+            ))}
 
             <div className={styles.containerNovoUsuario}>
                 <h3>Preencha os campos abaixo para cadastrar-se!</h3>
