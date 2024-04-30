@@ -28,32 +28,9 @@ function NovoUsuario(){
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
-    const [novoUsuario, setNovoUsuario] = useState({
-        nomeUsuario:"",
-        sexo: "",
-        cpf: "",
-        dataNasc: "",
-        email: "",
-        senha: "",
-        cepUsuario: "",
-        ruaUsuario: "",
-        numeroUsuario: "",
-        complementoUsuario: "",
-        bairroUsuario: "",
-        cidadeUsuario: "",
-        estadoUsuario: "",
-        usuarioAtivo: "false"
-    })
-
-    function testaForm(formValue){       
-        console.log('formvalue',formValue)   //apenas testando se os valores foram recebidos corretamente
-
-        setNovoUsuario((d) => ({...d, ...formValue}))
-
-        console.log('novoUsuario', novoUsuario) 
-        
-        cadastrarUsuario(novoUsuario)
-    }
+    function testaForm(formValue){    
+        cadastrarUsuario({...formValue})
+    }   
 
     function cadastrarUsuario(novoUsuario){
         fetch("http://localhost:3000/usuarios", {
@@ -64,9 +41,8 @@ function NovoUsuario(){
             },
         })
         .then(() => console.log('OK'))
-        .catch((erro) => console.log(erro))
+        .catch(() => console.log('erro'))
     }
-
 
     //ViaCep
     const buscarCep = async () => {
@@ -100,8 +76,6 @@ function NovoUsuario(){
     //     .catch(error => console.log(error))
     // }, [])
 
-
- 
 
     return(
         <div>
@@ -232,7 +206,8 @@ function NovoUsuario(){
                     
                     <div className={styles.botaoCadastrar}>
                         <ThemeProvider theme={theme}>
-                            <Button                                
+                            <Button 
+                                onClick={handleSubmit(testaForm)}                             
                                 type="submit"
                                 variant="contained"
                                 color="primary"
