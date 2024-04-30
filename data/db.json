@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nomeUsuario": "Manoel Daniel Julio Aparício",
       "sexo": "Masculino",
       "cpf": "79929130195",
@@ -18,7 +18,7 @@
       "usuarioAtivo": "false"
     },
     {
-      "id": 2,
+      "id": "2",
       "nomeUsuario": "Danilo Alexandre Brito",
       "sexo": "Masculino",
       "cpf": "09771132210",
@@ -35,7 +35,7 @@
       "usuarioAtivo": "false"
     },
     {
-      "id": 3,
+      "id": "3",
       "nomeUsuario": "Jenifer Mariah Gonçalves",
       "sexo": "Feminino",
       "cpf": "17574211302",
@@ -52,7 +52,7 @@
       "usuarioAtivo": "false"
     },
     {
-      "id": 4,
+      "id": "4",
       "nomeUsuario": "Carolina Hadassa Emanuelly Nunes",
       "sexo": "Feminino",
       "cpf": "78506673011",
@@ -69,7 +69,7 @@
       "usuarioAtivo": "false"
     },
     {
-      "id": 5,
+      "id": "5",
       "nomeUsuario": "Felipe Daniel Marcos Vinicius Mendes",
       "sexo": "Masculino",
       "cpf": "62140929551",
@@ -84,6 +84,22 @@
       "cidadeUsuario": "Canoas",
       "estadoUsuario": "RS",
       "usuarioAtivo": "false"
+    },
+    {
+      "id": "94b1",
+      "nomeUsuario": "Rorin",
+      "sexo": "Feminino",
+      "cpf": "12345678911",
+      "dataNasc": "1989-05-12",
+      "email": "user@email.com",
+      "senha": "444444444444",
+      "cepUsuario": "88058310",
+      "ruaUsuario": "Servidão Laureano Pereira dos Santos",
+      "bairroUsuario": "Ingleses do Rio Vermelho",
+      "numeroUsuario": "32",
+      "complementoUsuario": "",
+      "cidadeUsuario": "Florianópolis",
+      "estadoUsuario": "SC"
     }
   ],
   "locais": []

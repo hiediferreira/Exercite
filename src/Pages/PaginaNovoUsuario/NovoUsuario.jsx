@@ -37,7 +37,7 @@ function NovoUsuario(){
             method: 'POST',  //adicionar usuário à API
             body: JSON.stringify(novoUsuario),                    
             headers: {
-                'Contente-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
         })
         .then(() => console.log('OK'))
