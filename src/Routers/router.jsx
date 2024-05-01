@@ -4,6 +4,7 @@ import NovoUsuario from '../Pages/PaginaNovoUsuario/NovoUsuario.jsx'
 import PaginaErro from '../Pages/Erro/PaginaErro.jsx'
 import Dashboard from '../Pages/Dashboard/Dashboard.jsx'
 import Lista from '../Pages/Lista/Lista.jsx'
+import NovoLocal from '../Pages/CadastroLocal/NovoLocal.jsx'
 
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
@@ -40,6 +41,10 @@ const rotas = createBrowserRouter ([
       {
         path: "/lista",
         element: <Lista />
+      },
+      {
+        path: "/novoLocal",
+        element: <NovoLocal />
       }
     ]
   }
