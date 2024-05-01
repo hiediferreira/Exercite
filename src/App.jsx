@@ -1,15 +1,12 @@
 import './App.css'
-
 import { Outlet } from 'react-router-dom'
-import { UsuariosContextProvider } from './Context/UsuariosContext'
 
 function App() {
   return (
-    
-     
-      <Outlet />  
-
-    
+    <>
+      <h1>App</h1>
+      <Outlet /> 
+    </>
   )
 }
 

@@ -3,8 +3,36 @@ import { useState, useEffect, createContext } from "react";
 export const UsuariosContext = createContext()    //Cria o contexto
 export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
 
+    ///// Função para redirecinar o usuário paratela de login /////
     function goLogin(){
-        window.location.href = "/login"  //tela de login
+        window.location.href = "/login"  
+    }
+
+    ///// Login /////
+    async function login(email, senha){
+        try{
+            const response = await fetch("http://localhost:3000/usuarios")
+            const dados = await response.json()
+
+            let usuarioExiste = false      //Até então, usuário não existe
+            dados.map(user => {
+                if(user.email == email){   //Existe um usuário com esse e-mail??
+                    usuarioExiste = true   //Se sim, agora o usuário existe e vamos verificar a senha
+                    if(user.senha == senha){ //se a senha bater
+                        localStorage.setItem("usuarioAutenticado", true)  //Vamos salvar no localStorage
+                        window.location.href = "/"  //Redirecionamos usuário para dashboard
+                        return
+                    }
+                    alert('Verifique os dados!')  //Não vamos falar que a senha está incorreta!
+                    return
+                }
+            })
+            if(!usuarioExiste){ //se nenhuma informação bateu
+                alert('Usuário não encontrado!')
+            }
+        } catch {
+            alert('Erro!')
+        }
     }
 
     //// CADASTRAR ////
@@ -38,7 +66,7 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
     }
 
     return(
-        <UsuariosContext.Provider value={{ cadastrarUsuario, usuarios, lerUsuarios }}>
+        <UsuariosContext.Provider value={{ cadastrarUsuario, usuarios, lerUsuarios, login }}>
             { children }
         </UsuariosContext.Provider>
     )

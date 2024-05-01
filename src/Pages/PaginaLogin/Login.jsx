@@ -29,11 +29,13 @@ function Login(){
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
-    function formularioLogin(formValue){
-        console.log(formValue)  
+    const {login} = useContext(UsuariosContext)
+
+    async function formularioLogin(formValue){
+        await login(formValue.email, formValue.senha)
     } 
 
-    const { lerUsuarios, usuarios} = useContext(UsuariosContext)
+    const { lerUsuarios, usuarios } = useContext(UsuariosContext)
     useEffect(() => {lerUsuarios()}, [])
 
     return(

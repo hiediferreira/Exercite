@@ -5,32 +5,44 @@ import PaginaErro from '../Pages/Erro/PaginaErro.jsx'
 import Dashboard from '../Pages/Dashboard/Dashboard.jsx'
 import Lista from '../Pages/Lista/Lista.jsx'
 
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
+
+let usuarioAutenticado = JSON.parse(localStorage.getItem("usuarioAutenticado")) || false
+//Vou procurar no localStorage se o usuário está autenticado ou não.
+// Se não estiver, usuarioAutenticado será falso.
+
+const PrivateRoute = ({ children }) => {
+  return usuarioAutenticado ? children : <Navigate to="/login" />  
+}
+//Se o usuário estiver autenticado, será mostrado a página filho
+//Caso contrário, o usuário será redirecionado para a tela de login
 
 const rotas = createBrowserRouter ([
-    {
-      path:'/',
-      element:  <App /> ,
-      errorElement: <PaginaErro />,
-      children: [
-        {
-          path: '/',
-          element: <Dashboard />
-        },
-        {
-          path: '/login',
-          element: <Login />
-        },
-        {
-          path: '/novoUsuario',
-          element: <NovoUsuario />
-        },
-        {
-          path: '/lista',
-          element: <Lista />
-        }
-      ]
-    }
+  {
+    path: "/login",
+    element: <Login />,
+    errorElement: <PaginaErro />,
+  },
+  {
+    path: "/novoUsuario",
+    element: <NovoUsuario />,
+    errorElement: <PaginaErro />,
+  },
+  {
+    path: "/",
+    element: (<PrivateRoute> <App /> </PrivateRoute>),
+    errorElement: <PaginaErro />,
+    children: [
+      {
+        path: "/",
+        element: <Dashboard />
+      },
+      {
+        path: "/lista",
+        element: <Lista />
+      }
+    ]
+  }
 ])
 
 export default rotas
