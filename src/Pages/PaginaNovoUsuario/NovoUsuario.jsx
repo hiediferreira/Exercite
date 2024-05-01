@@ -9,9 +9,9 @@ import theme from '../../Components/Temas/temaBotao'
 import { ThemeProvider } from '@mui/material/styles'
 
 import { useForm } from 'react-hook-form'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { UsuariosContext } from '../../Context/UsuariosContext'
 
 import styles from './novoUsuario.module.css'
 
@@ -20,12 +20,6 @@ function NovoUsuario(){
     //toda vez que clicar o botão recebe o estado oposto!
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show); 
-
-    //Navigate
-    const navigate = useNavigate()
-    function goLogin(){
-        navigate('/')
-    }
 
     //Formulário
     const {
@@ -36,24 +30,11 @@ function NovoUsuario(){
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
+    const { cadastrarUsuario } = useContext(UsuariosContext)
+
     function dadosForm(formValue){    
         cadastrarUsuario({...formValue})
     }   
-
-    function cadastrarUsuario(novoUsuario){
-        fetch("http://localhost:3000/usuarios", {
-            method: 'POST',  //adicionar usuário à API
-            body: JSON.stringify(novoUsuario),                    
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(() => {
-            goLogin(),  //redirecionar usuário para tela de login
-            console.log('Usuário cadastrado com sucesso!')
-        })
-        .catch(() => console.log('erro'))
-    }
 
     //ViaCep
     const buscarCep = async () => {
@@ -71,22 +52,6 @@ function NovoUsuario(){
             }
         }
     }
-
-
-    ///////////////////////////////////////////////////////
-    /*
-        usuarios é a lista que contém os usuários cadastrados;
-        setUsuarios nos garente que os dados estão atualizados, pois, 
-        ele nos mostra o estado atual da variável usuarios 
-    */
-    // const [usuarios, setUsuarios] = useState([])  
-    // useEffect(() => {
-    //     fetch("http://localhost:3000/usuarios")
-    //     .then(response => response.json())
-    //     .then(data => setUsuarios(data))
-    //     .catch(error => console.log(error))
-    // }, [])
-
 
     return(
         <div>

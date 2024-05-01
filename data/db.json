@@ -100,6 +100,22 @@
       "cidadeUsuario": "Florianópolis",
       "estadoUsuario": "SC",
       "id": 6
+    },
+    {
+      "nomeUsuario": "Olívia",
+      "sexo": "Feminino",
+      "cpf": "12345678911",
+      "dataNasc": "2023-01-20",
+      "email": "olivia@email.com",
+      "senha": "99999jffhfnf",
+      "cepUsuario": "88058313",
+      "ruaUsuario": "Servidão Saguá",
+      "bairroUsuario": "Ingleses do Rio Vermelho",
+      "numeroUsuario": "171",
+      "complementoUsuario": "Apto 2",
+      "cidadeUsuario": "Florianópolis",
+      "estadoUsuario": "SC",
+      "id": 7
     }
   ],
   "locais": []
