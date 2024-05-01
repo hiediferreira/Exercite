@@ -116,6 +116,22 @@
       "cidadeUsuario": "Florianópolis",
       "estadoUsuario": "SC",
       "id": 7
+    },
+    {
+      "nomeUsuario": "User",
+      "sexo": "Masculino",
+      "cpf": "01223659888",
+      "dataNasc": "2012-12-12",
+      "email": "user@email.com",
+      "senha": "8d5f5f5fg5gg1g",
+      "cepUsuario": "69008410",
+      "ruaUsuario": "Rua 1",
+      "bairroUsuario": "Colônia Antônio Aleixo",
+      "numeroUsuario": "0",
+      "complementoUsuario": "",
+      "cidadeUsuario": "Manaus",
+      "estadoUsuario": "AM",
+      "id": 8
     }
   ],
   "locais": []

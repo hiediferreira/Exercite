@@ -5,11 +5,11 @@ import { UsuariosContextProvider } from './Context/UsuariosContext'
 
 function App() {
   return (
-    <UsuariosContextProvider>
+    
      
       <Outlet />  
 
-    </UsuariosContextProvider>
+    
   )
 }
 

@@ -10,28 +10,39 @@ import theme from '../../Components/Temas/temaBotao'
 import { ThemeProvider } from '@mui/material/styles'
 
 import { useForm } from 'react-hook-form'
-import { useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
+
+import {UsuariosContext}  from '../../Context/UsuariosContext'
 
 import styles from './login.module.css'
 
-function Login(){  
+function Login(){ 
+    //Função para para o botão mostrar ou ocultar a senha 
+    //toda vez que clicar o botão recebe o estado oposto
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show); 
-    //toda vez que clicar o botão recebe o estado oposto
 
+    //Formulário   
     const {
         register,   //registra os campos de entrada do formulário
         handleSubmit, //lida com a submissão do formulário
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
-    function testaForm2(formValue){
+    function formularioLogin(formValue){
         console.log(formValue)  
     } 
+
+    const { lerUsuarios, usuarios} = useContext(UsuariosContext)
+    useEffect(() => {lerUsuarios()}, [])
 
     return(
         <div>
             <NavbarInicio />
+
+            {!!usuarios && usuarios.map(user => (
+                <h3 key={user.id}>{user.nomeUsuario} === {user.cidadeUsuario}/{user.estadoUsuario}</h3>
+            ))}
 
             <div className={styles.containerLogin}>
                 <h1 >Seja bem vinda(o) ao</h1>
@@ -40,7 +51,7 @@ function Login(){
                     <img src="./src/assets/Logo/logo2.png" alt="" width={"80px"} />
                 </div>
 
-                <form className={styles.formLogin} onSubmit={handleSubmit(testaForm2)}>
+                <form className={styles.formLogin} onSubmit={handleSubmit(formularioLogin)}>
                     <label htmlFor="email">E-mail</label>
                     <input  type="email" placeholder="Informe o e-mail" 
                         {...register("email", {
@@ -65,8 +76,6 @@ function Login(){
                     </div>
                     {errors?.senha && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.senha.message}</p>}
 
-                    
-                    
                     <div className={styles.botaoLogin}>
                         <ThemeProvider theme={theme}>
                             <Button                                

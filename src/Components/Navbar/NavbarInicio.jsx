@@ -6,7 +6,7 @@ function NavbarInicio(){
     return(
         <Header>
             <nav className={styles.navbar}>
-                <Link to='/'>Login</Link>
+                <Link to='/login'>Login</Link>
                 <Link to='/novoUsuario'>Cadastrar</Link>
             </nav>
         </Header>

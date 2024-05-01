@@ -10,20 +10,20 @@ import { createBrowserRouter } from 'react-router-dom'
 const rotas = createBrowserRouter ([
     {
       path:'/',
-      element: <App />,
+      element:  <App /> ,
       errorElement: <PaginaErro />,
       children: [
         {
           path: '/',
+          element: <Dashboard />
+        },
+        {
+          path: '/login',
           element: <Login />
         },
         {
           path: '/novoUsuario',
           element: <NovoUsuario />
-        },
-        {
-          path: '/dashboard',
-          element: <Dashboard />
         },
         {
           path: '/lista',

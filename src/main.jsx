@@ -7,8 +7,11 @@ import rotas from './Routers/router.jsx'
 
 import { RouterProvider} from 'react-router-dom'
 
+import { UsuariosContextProvider } from './Context/UsuariosContext'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={rotas}>  
-    
-  </RouterProvider>
+  <UsuariosContextProvider>
+    <RouterProvider router={rotas}>      
+    </RouterProvider>
+  </UsuariosContextProvider>
 )
