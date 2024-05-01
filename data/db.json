@@ -134,5 +134,31 @@
       "id": 8
     }
   ],
-  "locais": []
+  "locais": [
+    {
+      "id": 1,
+      "nomeExercicio": "",
+      "idUsuario": "",
+      "latitude": "",
+      "longitude": "",
+      "cepLocal": "",
+      "ruaLocal": "",
+      "numeroLocal": 0,
+      "complementoLocal": "",
+      "bairroLocal": "",
+      "cidadeLocal": "",
+      "estadoLocal": "",
+      "descricao": "",
+      "tipo": {
+        "alongamento": "false",
+        "caminhada": "false", 
+        "ciclismo": "false",
+        "corrida": "false",        
+        "musculacao": "false", 
+        "skate" : "false",
+        "surf": "false",
+        "yoga": "false"
+      }
+    }
+  ]
 }
