@@ -9,7 +9,9 @@ import theme from '../../Components/Temas/temaBotao'
 import { ThemeProvider } from '@mui/material/styles'
 
 import { useForm } from 'react-hook-form'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 import styles from './novoUsuario.module.css'
 
@@ -18,6 +20,12 @@ function NovoUsuario(){
     //toda vez que clicar o botão recebe o estado oposto!
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show); 
+
+    //Navigate
+    const navigate = useNavigate()
+    function goLogin(){
+        navigate('/')
+    }
 
     //Formulário
     const {
@@ -28,7 +36,7 @@ function NovoUsuario(){
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
-    function testaForm(formValue){    
+    function dadosForm(formValue){    
         cadastrarUsuario({...formValue})
     }   
 
@@ -40,7 +48,10 @@ function NovoUsuario(){
                 'Content-Type': 'application/json'
             },
         })
-        .then(() => console.log('OK'))
+        .then(() => {
+            goLogin(),  //redirecionar usuário para tela de login
+            console.log('Usuário cadastrado com sucesso!')
+        })
         .catch(() => console.log('erro'))
     }
 
@@ -84,7 +95,7 @@ function NovoUsuario(){
             <div className={styles.containerNovoUsuario}>
                 <h3>Preencha os campos abaixo para cadastrar-se!</h3>
 
-                <form className={styles.formNovoUsuario} onSubmit={handleSubmit(testaForm)}>
+                <form className={styles.formNovoUsuario} onSubmit={handleSubmit(dadosForm)}>
 
                     <label htmlFor="nomeUsuario">Nome</label>
                     <input  type="text" placeholder="Informe o nome" name="nomeUsuario"
@@ -207,7 +218,7 @@ function NovoUsuario(){
                     <div className={styles.botaoCadastrar}>
                         <ThemeProvider theme={theme}>
                             <Button 
-                                onClick={handleSubmit(testaForm)}                             
+                                onClick={handleSubmit(dadosForm)}                             
                                 type="submit"
                                 variant="contained"
                                 color="primary"
