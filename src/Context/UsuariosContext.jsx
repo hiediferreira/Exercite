@@ -13,7 +13,7 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
     function cadastrarUsuario(novoUsuario){
         fetch("http://localhost:3000/usuarios", {
             method: 'POST',  //adicionar usuário à API
-            body: JSON.stringify(novoUsuario),                    
+            body: JSON.stringify(novoUsuario),            //converte para Json        
             headers: {
                 'Content-Type': 'application/json'
             },
