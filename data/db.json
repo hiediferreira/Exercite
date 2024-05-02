@@ -137,19 +137,41 @@
   "locais": [
     {
       "id": 1,
-      "nomeExercicio": "",
-      "idUsuario": "",
-      "latitude": "",
-      "longitude": "",
-      "cepLocal": "",
-      "ruaLocal": "",
+      "nomeLocal": "Canto Sul da praia dos Ingleses",
+      "idUsuario": "Aurora",
+      "latitude": "-2.38",
+      "longitude": "-2.49",
+      "cepLocal": "88058700",
+      "ruaLocal": "Rua das Gaivotas",
+      "numeroLocal": "sn",
+      "complementoLocal": "Praia",
+      "bairroLocal": "Ingleses",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Lugar tranquilo para uma caminhada matinal.",
+      "tipo": [
+        "Caminhada"
+      ]
+    },
+    {
+      "nomeLocal": "Praia Brava",
+      "idUsuario": "Aurora",
+      "latitude": "-48.2222222",
+      "longitude": "-27.2222222",
+      "cepLocal": "88056800",
+      "ruaLocal": "Avenida Tom Traugott Wildi",
+      "bairroLocal": "Praia Brava",
       "numeroLocal": "0",
-      "complementoLocal": "",
-      "bairroLocal": "",
-      "cidadeLocal": "",
-      "estadoLocal": "",
-      "descricao": "",
-      "tipo": []
+      "complementoLocal": "Praia",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Ondas agitadas e praia tranquila.",
+      "tipo": [
+        "Caminhada",
+        "Corrida",
+        "Surf"
+      ],
+      "id": 2
     }
   ]
 }

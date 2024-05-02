@@ -3,6 +3,7 @@ import { useState, useEffect, createContext } from "react";
 export const UsuariosContext = createContext()    //Cria o contexto
 export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
 
+    /////////////   REFERENTE AOS USUÁRIOS   /////////////
     ///// Função para redirecinar o usuário paratela de login /////
     function goLogin(){
         window.location.href = "/login"  
@@ -65,8 +66,41 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
         .catch((erro) => console.log(erro))
     }
 
+    /////////////   REFERENTE AOS LOCAIS   /////////////
+     ///// Função para redirecinar o usuário para dashboard /////
+    function goHome(){
+        window.location.href = "/"  
+    }
+
+    //// CADASTRAR ////
+    function cadastrarLocal(novoLocal){
+        fetch("http://localhost:3000/locais", {
+            method: 'POST',  //adicionar lugar à API
+            body: JSON.stringify(novoLocal),   //converte para Json        
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(() => {
+            goHome(),  //redirecionar usuário para dashboard
+            console.log('Usuário cadastrado com sucesso!')
+        })
+        .catch(() => console.log('erro'))
+    }
+
+    //// MOSTRAR ////
+    //locais é a lista que contém os usuários cadastrados;     
+    const [locais, setLocais] = useState([])    
+    function lerLocais(){ 
+        fetch("http://localhost:3000/locais")    //GET
+        .then((response) => response.json())
+        .then((dados) => setLocais(dados))
+        .catch((erro) => console.log(erro))
+    }
+
     return(
-        <UsuariosContext.Provider value={{ cadastrarUsuario, usuarios, lerUsuarios, login }}>
+        <UsuariosContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarios, login, 
+        locais, cadastrarLocal, lerLocais }}>
             { children }
         </UsuariosContext.Provider>
     )

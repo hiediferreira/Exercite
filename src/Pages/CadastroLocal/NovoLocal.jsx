@@ -21,8 +21,10 @@ function NovoLocal(){
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
+    const { cadastrarLocal } = useContext(UsuariosContext)
+
     function dadosForm(formValue){
-        console.log(formValue)
+        cadastrarLocal({...formValue})
     }
 
     // ViaCep
@@ -46,15 +48,25 @@ function NovoLocal(){
         <div>
             <div className={styles.containerCadastroLugar}>
                 <h3>Preencha os campos abaixo para informar um lugar para prática livre de atividades físicas!</h3>
+
                 <form className={styles.formCadastroLugar} onSubmit={handleSubmit(dadosForm)}>
-                    <label htmlFor="nomeExercicio" >Nome da atividade física </label>
-                    <input  type="text" placeholder="Informe o nome" name="nomeExercicio" 
-                        {...register("nomeExercicio", {
+                    <label htmlFor="nomeLocal" >Nome do local </label>
+                    <input  type="text" placeholder="Informe o nome do local" name="nomeLocal" 
+                        {...register("nomeLocal", {
                             required: "Campo obrigatório!",
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
                         })}                                          
                     />
-                    {errors?.nomeExercicio && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.nomeExercicio.message}</p>}
+                    {errors?.nomeLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.nomeLocal.message}</p>}
+
+                    <label htmlFor="idUsuario" >Seu nome</label>
+                    <input  type="text" placeholder="Informe o seu nome" name="idUsuario" 
+                        {...register("idUsuario", {
+                            required: false,
+                            maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
+                        })}                                          
+                    />
+                    {errors?.idUsuario && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.idUsuario.message}</p>}
 
                     <label htmlFor="latitude" >Latitude</label>
                     <input  type="text" placeholder="Informe a latitude" name="latitude" 
@@ -103,7 +115,7 @@ function NovoLocal(){
                     <label htmlFor="numeroLocal" >Número</label>
                     <input  type="number" placeholder="Informe o número" min={0} name="numeroLocal"
                         {...register("numeroLocal", {
-                            required: "Campo obrigatório!",
+                            required: false
                         })}                                         
                     />
                     {errors?.numeroLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.numeroLocal.message}</p>}
@@ -135,7 +147,7 @@ function NovoLocal(){
                     {errors?.estadoLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.estadoLocal.message}</p>}
 
                     <label htmlFor="descricao" >Breve descrição</label>
-                    <textarea  type="text" placeholder="Descreva brevemente o lugar e a atividade física que pode ser praticada nesse local" name='descricao'
+                    <textarea  type="text" placeholder="Descreva brevemente o lugar e a atividade física que pode ser praticada nesse local." name='descricao'
                         {...register("descricao", {
                             required: false,
                             maxLength: {value:100, message:"Máximo 100 caracteres"}
@@ -200,7 +212,8 @@ function NovoLocal(){
 
                     <div className={styles.botaoCadastrar}>
                         <ThemeProvider theme={theme}>
-                            <Button                           
+                            <Button  
+                                onClick={handleSubmit(dadosForm)}                         
                                 type="submit"
                                 variant="contained"
                                 color="primary"
