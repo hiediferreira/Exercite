@@ -6,9 +6,10 @@ function NavbarComum(){
     return(
         <Header>
             <nav className={styles.navbar}>
-                <Link to='/lista'>Lista</Link>
-                <Link to='/lista'>Lista</Link>
                 <Link to='/'>Dasboard</Link>
+                <Link to='/novoLocal'>Cadastrar</Link>
+                <Link to='/lista'>Explorar</Link>
+                <Link to='/'>Logout</Link>
             </nav>
         </Header>
     )

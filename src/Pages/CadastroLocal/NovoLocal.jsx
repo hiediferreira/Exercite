@@ -21,7 +21,11 @@ function NovoLocal(){
         formState: {errors}  //lida com os erros de validação
     } = useForm()
 
-    //ViaCep
+    function dadosForm(formValue){
+        console.log(formValue)
+    }
+
+    // ViaCep
     const buscarCep = async () => {
         let cep = getValues("cepLocal")
         if(!!cep && cep.length === 8){ //se o cep for válido e tiver 8 digitos
@@ -42,7 +46,7 @@ function NovoLocal(){
         <div>
             <div className={styles.containerCadastroLugar}>
                 <h3>Preencha os campos abaixo para informar um lugar para prática livre de atividades físicas!</h3>
-                <form className={styles.formCadastroLugar}>
+                <form className={styles.formCadastroLugar} onSubmit={handleSubmit(dadosForm)}>
                     <label htmlFor="nomeExercicio" >Nome da atividade física </label>
                     <input  type="text" placeholder="Informe o nome" name="nomeExercicio" 
                         {...register("nomeExercicio", {
@@ -55,8 +59,7 @@ function NovoLocal(){
                     <label htmlFor="latitude" >Latitude</label>
                     <input  type="text" placeholder="Informe a latitude" name="latitude" 
                         {...register("latitude", {
-                            required: "Campo obrigatório!",
-                            minLength: {value:19, message:"Deve possuir 19 caracteres"}
+                            required: "Campo obrigatório!"
                         })}                                                   
                     />
                     {errors?.latitude && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.latitude.message}</p>}
@@ -64,8 +67,7 @@ function NovoLocal(){
                     <label htmlFor="longitude" >Longitude</label>
                     <input  type="text" placeholder="Informe a longitude" name="longitude" 
                         {...register("longitude", {
-                            required: "Campo obrigatório!",
-                            minLength: {value:19, message:"Deve possuir 19 caracteres"}
+                            required: "Campo obrigatório!"
                         })}                                        
                     />
                     {errors?.longitude && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.longitude.message}</p>}
@@ -90,7 +92,7 @@ function NovoLocal(){
                     {errors?.ruaLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.ruaLocal.message}</p>}
 
                     <label htmlFor="bairroLocal" >Bairro</label>
-                    <input  type="text" placeholder="Informe o bairro"  
+                    <input  type="text" placeholder="Informe o bairro" name="bairroLocal" 
                         {...register("bairroLocal", {
                             required: "Campo obrigatório!",
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
@@ -99,7 +101,7 @@ function NovoLocal(){
                     {errors?.bairroLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.bairroLocal.message}</p>}
 
                     <label htmlFor="numeroLocal" >Número</label>
-                    <input  type="number" placeholder="Informe o número" min={0} 
+                    <input  type="number" placeholder="Informe o número" min={0} name="numeroLocal"
                         {...register("numeroLocal", {
                             required: "Campo obrigatório!",
                         })}                                         
@@ -107,7 +109,7 @@ function NovoLocal(){
                     {errors?.numeroLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.numeroLocal.message}</p>}
 
                     <label htmlFor="complementoLocal" >Complemento</label>
-                    <input  type="text" placeholder="Complemento (se houver)" 
+                    <input  type="text" placeholder="Complemento (se houver)" name="complementoLocal"
                         {...register("complementoLocal", {
                             required: false,
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
@@ -116,7 +118,7 @@ function NovoLocal(){
                     {errors?.complementoLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.complementoLocal.message}</p>}
 
                     <label htmlFor="cidadeLocal" >Cidade</label>
-                    <input  type="text" placeholder="Informe a cidade"  
+                    <input  type="text" placeholder="Informe a cidade" name="cidadeLocal"
                         {...register("cidadeLocal", {
                             required: "Campo obrigatório!",
                             maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
@@ -125,7 +127,7 @@ function NovoLocal(){
                     {errors?.cidadeLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.cidadeLocal.message}</p>}
 
                     <label htmlFor="estadoLocal" >Estado</label>
-                    <input  type="text" placeholder="Informe o estado" 
+                    <input  type="text" placeholder="Informe o estado" name="estadoLocal"
                         {...register("estadoLocal", {
                             required: "Campo obrigatório!"
                         })}                                          
@@ -135,7 +137,7 @@ function NovoLocal(){
                     <label htmlFor="descricao" >Breve descrição</label>
                     <textarea  type="text" placeholder="Descreva brevemente o lugar e a atividade física que pode ser praticada nesse local" name='descricao'
                         {...register("descricao", {
-                             required: "Campo obrigatório!",
+                            required: false,
                             maxLength: {value:100, message:"Máximo 100 caracteres"}
                         })}>                                         
                     </textarea>
@@ -145,60 +147,55 @@ function NovoLocal(){
                         Tipos de atividade física
                     </p>
                            
-                    <div>
-                        <input type="checkbox" name="alongamento" value="Alongamento"
-                            {...register("tipo")}
-                        />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Alongamento</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="caminhada"value="Caminhada"
-                            {...register("tipo")}
-                        />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Caminhada</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="ciclismo"value="Ciclismo"
-                            {...register("tipo")}
-                        />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Ciclismo</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="corrida" value="Corrida"
-                            {...register("tipo")}
-                        />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Corrida</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="musculacao"value="Musculação"
-                            {...register("tipo")}
-                        />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Musculacao</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="skate"value="Skate"
-                            {...register("tipo")}
-                        />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Skate</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="surf" value="Surf"
-                            {...register("tipo")}
-                        />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Surf</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="yoga"value="Yoga" 
-                            {...register("tipo")}
+                    <div className={styles.gridLayout}>
+                        <div>
+                            <input type="checkbox" name="alongamento" value="Alongamento"
+                                {...register("tipo")}
                             />
-                        <label htmlFor="tipo" className={styles.labelCheckbox}>Yoga</label>
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Alongamento</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="caminhada"value="Caminhada"
+                                {...register("tipo")}
+                            />
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Caminhada</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="ciclismo"value="Ciclismo"
+                                {...register("tipo")}
+                            />
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Ciclismo</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="corrida" value="Corrida"
+                                {...register("tipo")}
+                            />
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Corrida</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="musculacao"value="Musculação"
+                                {...register("tipo")}
+                            />
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Musculacao</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="skate"value="Skate"
+                                {...register("tipo")}
+                            />
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Skate</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="surf" value="Surf"
+                                {...register("tipo")}
+                            />
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Surf</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="yoga"value="Yoga"
+                                {...register("tipo")}
+                                />
+                            <label htmlFor="tipo" className={styles.labelCheckbox}>Yoga</label>
+                        </div>
                     </div>
 
                     <div className={styles.botaoCadastrar}>

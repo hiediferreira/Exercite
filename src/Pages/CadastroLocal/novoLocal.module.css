@@ -73,3 +73,9 @@ input[type="checkbox"]{
 .botaoCadastrar{
     margin: auto;
 }
+
+.gridLayout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
