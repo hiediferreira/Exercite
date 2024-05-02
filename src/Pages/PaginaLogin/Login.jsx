@@ -35,16 +35,9 @@ function Login(){
         await login(formValue.email, formValue.senha)
     } 
 
-    const { lerUsuarios, usuarios } = useContext(UsuariosContext)
-    useEffect(() => {lerUsuarios()}, [])
-
     return(
         <div>
             <NavbarInicio />
-
-            {!!usuarios && usuarios.map(user => (
-                <h3 key={user.id}>{user.nomeUsuario} === {user.cidadeUsuario}/{user.estadoUsuario}</h3>
-            ))}
 
             <div className={styles.containerLogin}>
                 <h1 >Seja bem vinda(o) ao</h1>

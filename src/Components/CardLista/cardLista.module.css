@@ -1,0 +1,73 @@
+.cardContainer{
+    background-image: linear-gradient(to bottom, #757981,  #d9dce0);
+
+    width: 500px;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 20px;    
+    margin: 2em auto;
+}
+
+.divTitulo{
+    background-color: var(--verdeLogo);
+    border-radius: 20px 20px 0 0;
+    padding: 1em;
+}
+
+.divTitulo>h3{
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.divTitulo>p{
+    text-align: left;
+    font-weight: bold;
+}
+
+.divTitulo p:last-child{
+    text-align: right;
+    font-weight: bold;
+}
+
+.divConteudo{
+    padding-left: 1em;
+}
+
+.divConteudo li{
+    margin-left: 2em;    
+}
+
+.divFlex{
+    display: flex;
+    align-items: center;
+
+}
+
+.divGrid{
+    display: grid;
+    column-gap: 2em;
+
+    grid-template-areas: "rua rua"
+                         "cep bairro"
+                         "num compl";
+}
+
+.rua{
+    grid-area: rua;
+}
+.cep{
+    grid-area: cep;
+}
+.bairro{
+    grid-area: bairro;
+}
+.num{
+    grid-area: num;
+}
+.rua{
+    grid-area: rua;
+}
+.compl{
+    grid-area: compl;
+}
+
