@@ -98,9 +98,18 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
         .catch((erro) => console.log(erro))
     }
 
+    //// APAGAR ////
+    function apagarLocal(id){
+        fetch(`http://localhost:3000/locais/${id}`, {
+            method: 'DELETE'
+        })
+        .then(() => lerLocais())
+        .catch(() => console.log('erro'))
+    }
+
     return(
         <UsuariosContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarios, login, 
-        locais, cadastrarLocal, lerLocais }}>
+        locais, cadastrarLocal, lerLocais, apagarLocal }}>
             { children }
         </UsuariosContext.Provider>
     )

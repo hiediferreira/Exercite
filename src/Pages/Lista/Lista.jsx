@@ -3,20 +3,16 @@ import { useEffect, useContext } from 'react'
 
 import CardLista from '../../Components/CardLista/CardLista'
 
-import { Button } from '@mui/material'
-import theme from '../../Components/Temas/temaBotao'
-import { ThemeProvider } from '@mui/material/styles'
-
 function Lista(){
-    const { lerUsuarios, usuarios, lerLocais, locais } = useContext(UsuariosContext)
-    useEffect(() => {lerUsuarios(), lerLocais()}, [])
+    const { lerUsuarios, usuarios, lerLocais, locais, apagarLocal } = useContext(UsuariosContext)
+    useEffect(() => {lerUsuarios(), lerLocais()}, []) //Quando carrega a página, mostra os lugares cadastrados atualizados.
 
     function botaoEditar(){
         alert('Editar')
     }
 
-    function botaoExcluir(){
-        alert('Excluir')
+    function excluir(id){
+        alert(id)
     }
 
     return(
@@ -29,7 +25,7 @@ function Lista(){
             {!!locais && locais.map(dados => (
                 <CardLista dadosLista={dados} key={dados.id} 
                 onClickEditar={botaoEditar} 
-                onClickExcluir={botaoExcluir}
+                onClickExcluir={() => excluir(dados.id)}
                 />
             ))}
         </div>

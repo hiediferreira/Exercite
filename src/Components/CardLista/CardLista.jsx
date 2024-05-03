@@ -6,7 +6,7 @@ import { ThemeProvider } from '@mui/material/styles'
 
 function CardLista({dadosLista, onClickEditar, onClickExcluir}){
     return(
-        <div className={styles.cardContainer}    >
+        <div className={styles.cardContainer}>
             <div className={styles.divTitulo}>
                 <h3>{dadosLista.nomeLocal}</h3>
                 <p>{dadosLista.cidadeLocal}/{dadosLista.estadoLocal}</p>
@@ -15,6 +15,7 @@ function CardLista({dadosLista, onClickEditar, onClickExcluir}){
 
             <hr />
             <hr />
+            
             <div className={styles.divConteudo}>
                 <p className={styles.descricao}>{dadosLista.descricao}</p>
                 <p>Sugestões de atividades físicas nesse local:</p>

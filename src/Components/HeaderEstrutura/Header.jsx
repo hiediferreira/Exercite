@@ -5,7 +5,9 @@ import styles from "./header.module.css"
     Cor de fundo;
     Logo.
 
-    A props.children vai permitir que eu tenha 2 barras de navegação diferentes. Uma vez que a estilização e o logo são fixos, basta eu chamar o header e estilizar conforme a barra de navegação desejada.
+    A props.children vai permitir que eu tenha 2 barras de navegação diferentes. 
+    Criei essa estrutura apenas para fixar a estilização e o logo.
+    Como vou ter 2 modelos de navbar basta eu chamar essa estrutura e estilizar conforme a barra de navegação desejada.
 */
 
 function Header(props){
