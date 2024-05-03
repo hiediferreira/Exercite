@@ -12,7 +12,7 @@ function Lista(){
     }
 
     function excluir(id){
-        alert(id)
+        apagarLocal(id)
     }
 
     return(
