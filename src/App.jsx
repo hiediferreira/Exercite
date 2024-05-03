@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <NavbarComum />  
-      <h1>App</h1>
       <Outlet /> 
     </>
   )

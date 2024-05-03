@@ -1,6 +1,10 @@
 import styles from "./cardLista.module.css"
 
-function CardLista({dadosLista}){
+import { Button } from '@mui/material'
+import theme from '../../Components/Temas/temaBotao'
+import { ThemeProvider } from '@mui/material/styles'
+
+function CardLista({dadosLista, onClickEditar, onClickExcluir}){
     return(
         <div className={styles.cardContainer}    >
             <div className={styles.divTitulo}>
@@ -12,9 +16,9 @@ function CardLista({dadosLista}){
             <hr />
             <hr />
             <div className={styles.divConteudo}>
-                <p>{dadosLista.descricao}</p>
+                <p className={styles.descricao}>{dadosLista.descricao}</p>
                 <p>Sugestões de atividades físicas nesse local:</p>
-                <ul>
+                <ul type={"circle"}>
                     {dadosLista.tipo.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
@@ -28,6 +32,29 @@ function CardLista({dadosLista}){
                         <p className={styles.num}>Número: {dadosLista.numeroLocal}</p>
                         <p className={styles.compl}>Complemento: {dadosLista.complementoLocal}</p>
                     </div>
+                </div>
+
+                <div className={styles.divBotoes}>
+                    <ThemeProvider theme={theme}>
+                        <Button
+                            onClick={onClickEditar}
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            sx={{"mt":2, "mr":2}}>
+                                Editar
+                        </Button>
+                    </ThemeProvider>
+                    <ThemeProvider theme={theme}>
+                        <Button
+                            onClick={onClickExcluir}
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            sx={{"mt":2}}>
+                                Excluir
+                        </Button>
+                    </ThemeProvider>
                 </div>
             </div>
         </div>

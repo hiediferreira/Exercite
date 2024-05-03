@@ -40,12 +40,13 @@
 .divFlex{
     display: flex;
     align-items: center;
-
+    margin-top: 1em;
 }
 
 .divGrid{
     display: grid;
     column-gap: 2em;
+    row-gap: 0.4em;
 
     grid-template-areas: "rua rua"
                          "cep bairro"
@@ -69,5 +70,15 @@
 }
 .compl{
     grid-area: compl;
+}
+
+.descricao{
+    text-align: center;
+    margin: 1em 0;
+}
+
+.divBotoes{
+    text-align: center;
+    margin: auto;
 }
 
