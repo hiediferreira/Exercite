@@ -136,24 +136,6 @@
   ],
   "locais": [
     {
-      "id": 1,
-      "nomeLocal": "Canto Sul da praia dos Ingleses",
-      "idUsuario": "Aurora",
-      "latitude": "-2.38",
-      "longitude": "-2.49",
-      "cepLocal": "88058700",
-      "ruaLocal": "Rua das Gaivotas",
-      "numeroLocal": "sn",
-      "complementoLocal": "Praia",
-      "bairroLocal": "Ingleses",
-      "cidadeLocal": "Florianópolis",
-      "estadoLocal": "SC",
-      "descricao": "Lugar tranquilo para uma caminhada matinal.",
-      "tipo": [
-        "Caminhada"
-      ]
-    },
-    {
       "nomeLocal": "Praia Brava",
       "idUsuario": "Aurora",
       "latitude": "-48.2222222",
@@ -172,6 +154,29 @@
         "Surf"
       ],
       "id": 2
+    },
+    {
+      "nomeLocal": "Beira mar Norte",
+      "idUsuario": "Aurora",
+      "latitude": "-1,00",
+      "longitude": "-2,00",
+      "cepLocal": "99300000",
+      "ruaLocal": "Rua do Governador",
+      "bairroLocal": "Centro",
+      "numeroLocal": "0",
+      "complementoLocal": "Parque",
+      "cidadeLocal": "Soledade",
+      "estadoLocal": "RS",
+      "descricao": "Parque bem arborizado, calmo e com belas paisagens. Permitido levar alimentos e animais domésticos.",
+      "tipo": [
+        "Alongamento",
+        "Caminhada",
+        "Ciclismo",
+        "Corrida",
+        "Musculação",
+        "Yoga"
+      ],
+      "id": 3
     }
   ]
 }
