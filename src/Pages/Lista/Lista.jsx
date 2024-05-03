@@ -4,11 +4,11 @@ import { useEffect, useContext } from 'react'
 import CardLista from '../../Components/CardLista/CardLista'
 
 function Lista(){
-    const { lerUsuarios, usuarios, lerLocais, locais, apagarLocal } = useContext(UsuariosContext)
+    const { usuarios, lerUsuarios, locais, lerLocais, apagarLocal, editarLocal } = useContext(UsuariosContext)
     useEffect(() => {lerUsuarios(), lerLocais()}, []) //Quando carrega a página, mostra os lugares cadastrados atualizados.
 
-    function botaoEditar(){
-        alert('Editar')
+    function editar(id){
+        editarLocal(locais, id)
     }
 
     function excluir(id){
@@ -24,7 +24,7 @@ function Lista(){
 
             {!!locais && locais.map(dados => (
                 <CardLista dadosLista={dados} key={dados.id} 
-                onClickEditar={botaoEditar} 
+                onClickEditar={() => editar(dados.id)} 
                 onClickExcluir={() => excluir(dados.id)}
                 />
             ))}
