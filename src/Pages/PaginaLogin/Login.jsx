@@ -43,7 +43,7 @@ function Login(){
                 <h1 >Seja bem vinda(o) ao</h1>
                 <div className={styles.logoLogin}>
                     <h2>Exercite</h2>
-                    <img src="./src/assets/Logo/logo2.png" alt="" width={"80px"} />
+                    <img src="./src/assets/Logo/logo.png" alt="" width={"80px"} />
                 </div>
 
                 <form className={styles.formLogin} onSubmit={handleSubmit(formularioLogin)}>
