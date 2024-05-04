@@ -12,10 +12,15 @@ import { ThemeProvider } from '@mui/material/styles'
 import styles from './edicao.module.css'
 
 function Edicao(){
-    useEffect(() => lerLocalId(), []) 
+    useEffect(() => {
+        if(!!id){   //verifica se id não é nulo
+            lerLocalId()
+        }
+    }, [])
     /*Ao carregar a página, 
         chama a função para pegar as informações conforme o id.
     */
+
     const { id } = useParams()   //pega o id via url
 
     const [localId, setlocalId] = useState([])  
@@ -91,7 +96,6 @@ function Edicao(){
                     <li key={index}>{item}</li>
                 ))}
             </ul>
-
 
             <div className={styles.containerCadastroLugar}>
                 <form className={styles.formCadastroLugar} onSubmit={handleSubmit(dadosForm)}>

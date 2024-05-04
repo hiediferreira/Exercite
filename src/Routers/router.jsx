@@ -48,7 +48,7 @@ const rotas = createBrowserRouter ([
         element: <NovoLocal />
       },
       {
-        path: "editar/:id",
+        path: "/editar/:id",
         element: <Edicao />
       }
     ]

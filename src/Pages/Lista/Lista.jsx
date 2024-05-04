@@ -8,7 +8,6 @@ function Lista(){
     useEffect(() => {lerLocais()}, []) //Quando carrega a página, mostra os lugares cadastrados atualizados.
 
     function editar(id){
-        debugger
         window.location.href = `/editar/${id}` 
     }
 

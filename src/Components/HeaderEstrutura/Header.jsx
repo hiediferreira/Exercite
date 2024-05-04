@@ -14,7 +14,7 @@ function Header(props){
     return(
         <header className={styles.header}>
             <div className={styles.headerLogo}>              
-                <img src="./src/assets/Logo/logo.png" alt="logotipo" width={'40px'}  />
+                <img src="/Logo/logo.png" alt="logotipo" width={'40px'}  />
                 <h2>Exercite</h2>
             </div>
             {props.children}

@@ -25,7 +25,7 @@ function CardLista({dadosLista, onClickEditar, onClickExcluir}){
                     ))}
                 </ul>
                 <div className={styles.divFlex}>
-                    <img src="./src/assets/Logo/local.png" alt="imagem-ilustrativa"  height={"50px"}/>
+                    <img src="/Logo/local.png" alt="imagem-ilustrativa"  height={"50px"}/>
                     <div className={styles.divGrid}>
                         <p className={styles.rua}>Rua: {dadosLista.ruaLocal}</p>
                         <p className={styles.cep}>CEP: {dadosLista.cepLocal}</p>

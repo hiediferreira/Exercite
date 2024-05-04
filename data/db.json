@@ -136,8 +136,7 @@
   ],
   "locais": [
     {
-      "id": 1,
-      "nomeLocal": "Praia Brava",
+      "nomeLocal": "Praia Selvagem",
       "idUsuario": "Aurora",
       "latitude": "-48.2222222",
       "longitude": "-27.2222222",
@@ -153,7 +152,8 @@
         "Caminhada",
         "Corrida",
         "Surf"
-      ]
+      ],
+      "id": 1
     },
     {
       "nomeLocal": "Beira mar Norte",
