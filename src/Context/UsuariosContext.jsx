@@ -107,21 +107,9 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
         .catch(() => console.log('erro'))
     }
 
-    //// PEGAR OS DADOS POR id ////
-    const [localId, setlocalId] = useState([])  
-    function lerLocalId(id){ 
-        debugger
-        fetch(`http://localhost:3000/locais/${id}`)    //GET
-        .then((response) => response.json())
-        .then((dados) => setlocalId(dados))
-        .catch((erro) => console.log(erro))
-    }
-
-
     return(
         <UsuariosContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarios, login, 
-        locais, cadastrarLocal, lerLocais, apagarLocal,
-        localId, lerLocalId }}>
+        locais, cadastrarLocal, lerLocais, apagarLocal }}>
             { children }
         </UsuariosContext.Provider>
     )

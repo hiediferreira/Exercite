@@ -12,15 +12,52 @@ import { ThemeProvider } from '@mui/material/styles'
 import styles from './edicao.module.css'
 
 function Edicao(){
-    
-    const {id} = useParams()
+    useEffect(() => lerLocalId(), []) 
+    /*Ao carregar a página, 
+        chama a função para pegar as informações conforme o id.
+    */
+    const { id } = useParams()   //pega o id via url
 
-    const { localId, lerLocalId  } = useContext(UsuariosContext)
-    useEffect(() => {
-        lerLocalId(id)
-        setValue('nomeLocal', localId.nomeLocal) //OBS: não está funcionando!
-    }, []) 
+    const [localId, setlocalId] = useState([])  
 
+    const lerLocalId = async () => {
+        try{
+            let response = await fetch(`http://localhost:3000/locais/${id}`)
+            let dados = await response.json()
+            setlocalId(dados)   //passa para localId os valores que encontrar no índice 1
+
+            setValue("nomeLocal", dados.nomeLocal)
+            setValue("idUsuario", dados.idUsuario)
+            setValue("latitude", dados.latitude)
+            setValue("longitude", dados.longitude)
+            setValue("cepLocal", dados.cepLocal)
+            setValue("ruaLocal", dados.ruaLocal)
+            setValue("bairroLocal", dados.bairroLocal)
+            setValue("numeroLocal", dados.numeroLocal)
+            setValue("complementoLocal", dados.complementoLocal)
+            setValue("cidadeLocal", dados.cidadeLocal)
+            setValue("estadoLocal", dados.estadoLocal)
+            setValue("descricao", dados.descricao)
+            setValue("tipo", dados.tipo)
+
+        } catch (err){
+            console.log(err)
+        }
+    }
+
+    function EditarLocal(data, id){
+        fetch(`http://localhost:3000/locais/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(() => window.location.href = "/lista")
+        .catch(() => console.log("erro"))
+    }
+
+    //Formulário 
     const {
         register,      //registra os campos de entrada do formulário
         handleSubmit,  //lida com a submissão do formulário
@@ -29,16 +66,32 @@ function Edicao(){
     } = useForm()
 
     function dadosForm(formValue){
-        console.log(formValue)
+        EditarLocal(formValue, id)
     }
 
     return(
         <div>
-            <h1>Tela de edição por id</h1>
-            <p>{localId.nomeLocal}</p>
-            <p>{localId.cidadeLocal}/{localId.estadoLocal}</p>
-            <p>Por: {localId.idUsuario}</p>
-            <p>{localId.descricao}</p>
+
+            <h1>Testando o recebimento correto dos dados!</h1>
+            <h3>id: {id} </h3>
+            <p>Local: {localId.nomeLocal}</p>
+            <p>Cidade/Estado: {localId.cidadeLocal}/{localId.estadoLocal}</p>
+            <p>Cadastrator: {localId.idUsuario} </p>
+            <p>Endereço:</p>
+            <ul>
+                <li>CEP: {localId.cepLocal}</li>
+                <li>Rua: {localId.ruaLocal} - Bairro: {localId.bairroLocal}</li>
+                <li>Nº: {localId.numeroLocal}</li>
+                <li>{localId.complementoLocal}</li>
+            </ul>
+            <p>Descrição: {localId.descricao}</p>
+            <p>Sugestões de práticas exportivas:</p>
+            <ul> 
+                {!!localId.tipo && localId.tipo.map((item, index) => (
+                    <li key={index}>{item}</li>
+                ))}
+            </ul>
+
 
             <div className={styles.containerCadastroLugar}>
                 <form className={styles.formCadastroLugar} onSubmit={handleSubmit(dadosForm)}>

@@ -4,8 +4,8 @@ import { useEffect, useContext } from 'react'
 import CardLista from '../../Components/CardLista/CardLista'
 
 function Lista(){
-    const { usuarios, lerUsuarios, locais, lerLocais, apagarLocal } = useContext(UsuariosContext)
-    useEffect(() => {lerUsuarios(), lerLocais()}, []) //Quando carrega a página, mostra os lugares cadastrados atualizados.
+    const { locais, lerLocais, apagarLocal } = useContext(UsuariosContext)
+    useEffect(() => {lerLocais()}, []) //Quando carrega a página, mostra os lugares cadastrados atualizados.
 
     function editar(id){
         debugger

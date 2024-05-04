@@ -167,14 +167,13 @@
       "complementoLocal": "Parque",
       "cidadeLocal": "Soledade",
       "estadoLocal": "RS",
-      "descricao": "Parque bem arborizado, calmo e com belas paisagens. Permitido levar alimentos e animais domésticos.",
+      "descricao": "SOS, Deus!",
       "tipo": [
         "Alongamento",
         "Caminhada",
         "Ciclismo",
         "Corrida",
-        "Musculação",
-        "Yoga"
+        "Musculação"
       ],
       "id": 2
     },
