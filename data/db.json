@@ -136,6 +136,7 @@
   ],
   "locais": [
     {
+      "id": 1,
       "nomeLocal": "Praia Brava",
       "idUsuario": "Aurora",
       "latitude": "-48.2222222",
@@ -152,8 +153,7 @@
         "Caminhada",
         "Corrida",
         "Surf"
-      ],
-      "id": 2
+      ]
     },
     {
       "nomeLocal": "Beira mar Norte",
@@ -175,6 +175,27 @@
         "Corrida",
         "Musculação",
         "Yoga"
+      ],
+      "id": 2
+    },
+    {
+      "nomeLocal": "Campo do teste",
+      "idUsuario": "Hiédi",
+      "latitude": "-2,333",
+      "longitude": "-2,333",
+      "cepLocal": "88058313",
+      "ruaLocal": "Servidão Saguá",
+      "bairroLocal": "Ingleses do Rio Vermelho",
+      "numeroLocal": "451",
+      "complementoLocal": "Praça do muro alto",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Praça bem arborizada e bem conservada.",
+      "tipo": [
+        "Alongamento",
+        "Caminhada",
+        "Ciclismo",
+        "Skate"
       ],
       "id": 3
     }

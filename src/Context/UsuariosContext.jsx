@@ -107,24 +107,21 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
         .catch(() => console.log('erro'))
     }
 
-    //// EDITAR ////
-     function editarLocal(local, id){
-        fetch(`http://localhost:3000/locais/${id}`, {
-            method: 'PUT',  //editar ou atualizar lugar na API
-            body: JSON.stringify(local),   //converte para Json        
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(() => {
-            console.log('Usuário cadastrado com sucesso!')
-        })
-        .catch(() => console.log('erro'))
+    //// PEGAR OS DADOS POR id ////
+    const [localId, setlocalId] = useState([])  
+    function lerLocalId(id){ 
+        debugger
+        fetch(`http://localhost:3000/locais/${id}`)    //GET
+        .then((response) => response.json())
+        .then((dados) => setlocalId(dados))
+        .catch((erro) => console.log(erro))
     }
+
 
     return(
         <UsuariosContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarios, login, 
-        locais, cadastrarLocal, lerLocais, apagarLocal, editarLocal }}>
+        locais, cadastrarLocal, lerLocais, apagarLocal,
+        localId, lerLocalId }}>
             { children }
         </UsuariosContext.Provider>
     )

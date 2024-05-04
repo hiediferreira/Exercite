@@ -4,11 +4,12 @@ import { useEffect, useContext } from 'react'
 import CardLista from '../../Components/CardLista/CardLista'
 
 function Lista(){
-    const { usuarios, lerUsuarios, locais, lerLocais, apagarLocal, editarLocal } = useContext(UsuariosContext)
+    const { usuarios, lerUsuarios, locais, lerLocais, apagarLocal } = useContext(UsuariosContext)
     useEffect(() => {lerUsuarios(), lerLocais()}, []) //Quando carrega a página, mostra os lugares cadastrados atualizados.
 
     function editar(id){
-        editarLocal(locais, id)
+        debugger
+        window.location.href = `/editar/${id}` 
     }
 
     function excluir(id){
@@ -17,10 +18,10 @@ function Lista(){
 
     return(
         <div>
-            {/* <h2>Usuarios cadastrados</h2>
-            {!!usuarios && usuarios.map(user => (
-            <h3 key={user.id}>{user.nomeUsuario} === {user.cidadeUsuario}/{user.estadoUsuario}</h3>
-            ))} */}
+            {/* <h2>Usuarios cadastrados</h2>*/}
+            {/* {!!locais && locais.map(local => (
+            <h3 key={local.id}>{local.id} - {local.nomeLocal}</h3>
+            ))}  */}
 
             {!!locais && locais.map(dados => (
                 <CardLista dadosLista={dados} key={dados.id} 
@@ -28,6 +29,7 @@ function Lista(){
                 onClickExcluir={() => excluir(dados.id)}
                 />
             ))}
+
         </div>
     )
 }
