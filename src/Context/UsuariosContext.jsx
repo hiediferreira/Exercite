@@ -9,6 +9,11 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
         window.location.href = "/login"  
     }
 
+    const[auth, setAuth] = useState({
+        usuario: {},
+        usuarioAtivo: false
+    })
+
     ///// Login /////
     async function login(email, senha){
         try{
@@ -26,6 +31,8 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
                         localStorage.setItem("usuarioAutenticado", true)  //Salvar no localStorage
                         localStorage.setItem("idUsuario", user.id) //Salvar no localStorage o id do usuario
                         localStorage.setItem("nomeUsuario", user.nomeUsuario) //Salvar no localStorage o nome do usuario para eu pegar quando mostrar os cards
+
+                        setAuth({ user,  usuarioAtivo: true }) //Quero alterar a propriedade usuarioAtivo do db.json
                         
                         window.location.href = "/"  //Redirecionamos usuário para dashboard
                         return
