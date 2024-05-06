@@ -243,7 +243,7 @@ function Edicao(){
                                 variant="contained"
                                 color="primary"
                                 sx={{"my":2}}>
-                                    Cadastrar
+                                    Atualizar
                             </Button>
                         </ThemeProvider>
                     </div>

@@ -99,7 +99,7 @@
       "complementoUsuario": "",
       "cidadeUsuario": "Florianópolis",
       "estadoUsuario": "SC",
-      "usuarioAtivo": true,
+      "usuarioAtivo": false,
       "id": 6
     },
     {
@@ -118,6 +118,23 @@
       "estadoUsuario": "RS",
       "usuarioAtivo": true,
       "id": 7
+    },
+    {
+      "nomeUsuario": "Hiédi Ferreira",
+      "sexo": "Feminino",
+      "cpf": "12356988444",
+      "dataNasc": "1989-07-15",
+      "email": "user@email.com",
+      "senha": "123658994122",
+      "cepUsuario": "88058310",
+      "ruaUsuario": "Servidão Laureano Pereira dos Santos",
+      "bairroUsuario": "Ingleses do Rio Vermelho",
+      "numeroUsuario": "1023",
+      "complementoUsuario": "Apto 01",
+      "cidadeUsuario": "Florianópolis",
+      "estadoUsuario": "SC",
+      "usuarioAtivo": false,
+      "id": 8
     }
   ],
   "locais": [
@@ -206,6 +223,27 @@
       ],
       "idUsuario": "Aurora",
       "id": 4
+    },
+    {
+      "nomeLocal": "Parque Municipal do Córrego Grande",
+      "latitude": "-27.59764625257779",
+      "longitude": "-48.511250123688036",
+      "cepLocal": "88037000",
+      "ruaLocal": "Rua João Pio Duarte Silva",
+      "bairroLocal": "Córrego Grande",
+      "numeroLocal": "",
+      "complementoLocal": "Parque",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Parque bastante arborizado e bonito, animais silvestres.",
+      "tipo": [
+        "Alongamento",
+        "Caminhada",
+        "Corrida",
+        "Yoga"
+      ],
+      "idUsuario": "Hiédi Ferreira",
+      "id": 5
     }
   ]
 }
