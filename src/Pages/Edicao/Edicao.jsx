@@ -17,10 +17,8 @@ function Edicao(){
             lerLocalId()
         }
     }, [])
-    /*Ao carregar a página, 
-        chama a função para pegar as informações conforme o id.
-    */
-
+    //Ao carregar a página, chama a função para pegar as informações atualizadas conforme o id.
+    
     const { id } = useParams()   //pega o id via url
 
     const [localId, setlocalId] = useState([])  
@@ -29,7 +27,7 @@ function Edicao(){
         try{
             let response = await fetch(`http://localhost:3000/locais/${id}`)
             let dados = await response.json()
-            setlocalId(dados)   //passa para localId os valores que encontrar no índice 1
+            setlocalId(dados)   //passa para localId os valores que encontrar no índice 1 (por exemplo)
 
             setValue("nomeLocal", dados.nomeLocal)
             setValue("idUsuario", dados.idUsuario)
@@ -76,28 +74,9 @@ function Edicao(){
 
     return(
         <div>
-
-            <h1>Testando o recebimento correto dos dados!</h1>
-            <h3>id: {id} </h3>
-            <p>Local: {localId.nomeLocal}</p>
-            <p>Cidade/Estado: {localId.cidadeLocal}/{localId.estadoLocal}</p>
-            <p>Cadastrator: {localId.idUsuario} </p>
-            <p>Endereço:</p>
-            <ul>
-                <li>CEP: {localId.cepLocal}</li>
-                <li>Rua: {localId.ruaLocal} - Bairro: {localId.bairroLocal}</li>
-                <li>Nº: {localId.numeroLocal}</li>
-                <li>{localId.complementoLocal}</li>
-            </ul>
-            <p>Descrição: {localId.descricao}</p>
-            <p>Sugestões de práticas exportivas:</p>
-            <ul> 
-                {!!localId.tipo && localId.tipo.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
-
             <div className={styles.containerCadastroLugar}>
+                <h3>Edite o(s) campo(s) desejado(s)!</h3>
+
                 <form className={styles.formCadastroLugar} onSubmit={handleSubmit(dadosForm)}>
                     <label htmlFor="nomeLocal" >Nome do local </label>
                     <input  type="text" placeholder="Informe o nome do local" name="nomeLocal"
@@ -107,15 +86,6 @@ function Edicao(){
                         })}
                     />
                     {errors?.nomeLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.nomeLocal.message}</p>}
-
-                    <label htmlFor="idUsuario" >Seu nome</label>
-                    <input  type="text" placeholder="Informe o seu nome" name="idUsuario"
-                        {...register("idUsuario", {
-                            required: false,
-                            maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
-                        })}
-                    />
-                    {errors?.idUsuario && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.idUsuario.message}</p>}
 
                     <label htmlFor="latitude" >Latitude</label>
                     <input  type="text" placeholder="Informe a latitude" name="latitude"

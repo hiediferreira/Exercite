@@ -102,6 +102,8 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
 
     //// CADASTRAR ////
     function cadastrarLocal(novoLocal){
+        novoLocal.idUsuario = localStorage.getItem("nomeUsuario")
+        //Passando para idUsuario o nome do usuário que está cadastrando o local!
         fetch("http://localhost:3000/locais", {
             method: 'POST',  //adicionar lugar à API
             body: JSON.stringify(novoLocal),   //converte para Json        

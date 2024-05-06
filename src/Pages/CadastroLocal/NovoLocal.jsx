@@ -59,15 +59,6 @@ function NovoLocal(){
                     />
                     {errors?.nomeLocal && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.nomeLocal.message}</p>}
 
-                    <label htmlFor="idUsuario" >Seu nome</label>
-                    <input  type="text" placeholder="Informe o seu nome" name="idUsuario" 
-                        {...register("idUsuario", {
-                            required: false,
-                            maxLength: {value:50, message:"Deve possuir no máximo 50 caracteres"}
-                        })}                                          
-                    />
-                    {errors?.idUsuario && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.idUsuario.message}</p>}
-
                     <label htmlFor="latitude" >Latitude</label>
                     <input  type="text" placeholder="Informe a latitude" name="latitude" 
                         {...register("latitude", {

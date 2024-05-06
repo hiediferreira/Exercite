@@ -122,10 +122,10 @@
   ],
   "locais": [
     {
-      "nomeLocal": "Praia Selvagem",
-      "idUsuario": "Aurora",
-      "latitude": "-27.57487",
-      "longitude": "-48.50843",
+      "nomeLocal": "Praia Brava",
+      "idUsuario": "Maria de Fátima",
+      "latitude": "-27.39930",
+      "longitude": "-48.41293",
       "cepLocal": "88056800",
       "ruaLocal": "Avenida Tom Traugott Wildi",
       "bairroLocal": "Praia Brava",
@@ -135,72 +135,12 @@
       "estadoLocal": "SC",
       "descricao": "Ondas agitadas e praia tranquila.",
       "tipo": [
+        "Alongamento",
         "Caminhada",
         "Corrida",
         "Surf"
       ],
       "id": 1
-    },
-    {
-      "nomeLocal": "Beira mar Norte",
-      "idUsuario": "Aurora",
-      "latitude": "-27.58628",
-      "longitude": "-48.555314",
-      "cepLocal": "99300000",
-      "ruaLocal": "Rua do Governador",
-      "bairroLocal": "Centro",
-      "numeroLocal": "10",
-      "complementoLocal": "Parque",
-      "cidadeLocal": "Soledade",
-      "estadoLocal": "RS",
-      "descricao": "SOS, Deus!",
-      "tipo": [
-        "Alongamento",
-        "Caminhada",
-        "Ciclismo",
-        "Corrida",
-        "Musculação"
-      ],
-      "id": 2
-    },
-    {
-      "nomeLocal": "Campo do teste",
-      "idUsuario": "Hiédi",
-      "latitude": "-27.44429",
-      "longitude": "-48.37677",
-      "cepLocal": "88058313",
-      "ruaLocal": "Servidão Saguá",
-      "bairroLocal": "Ingleses do Rio Vermelho",
-      "numeroLocal": "451",
-      "complementoLocal": "Praça do muro alto",
-      "cidadeLocal": "Florianópolis",
-      "estadoLocal": "SC",
-      "descricao": "Praça bem arborizada e bem conservada.",
-      "tipo": [
-        "Alongamento",
-        "Caminhada",
-        "Ciclismo",
-        "Skate"
-      ],
-      "id": 3
-    },
-    {
-      "nomeLocal": "Praia Brava",
-      "idUsuario": "Maria",
-      "latitude": "-27.39930",
-      "longitude": "-48.41293",
-      "cepLocal": "88056800",
-      "ruaLocal": "Avenida Tom Traugott Wildi",
-      "bairroLocal": "Praia Brava",
-      "numeroLocal": "",
-      "complementoLocal": "",
-      "cidadeLocal": "Florianópolis",
-      "estadoLocal": "SC",
-      "descricao": "Ondas agitadas e praia tranquila.",
-      "tipo": [
-        "Ciclismo"
-      ],
-      "id": 4
     }
   ]
 }
