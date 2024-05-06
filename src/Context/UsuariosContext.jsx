@@ -43,8 +43,6 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
                         localStorage.setItem("idUsuario", user.id) //Salvar no localStorage o id do usuario
                         localStorage.setItem("nomeUsuario", user.nomeUsuario) //Salvar no localStorage o nome do usuario para eu pegar quando mostrar os cards
 
-                        debugger
-
                         usuarioLogado(user, user.id)
 
                         window.location.href = "/"  //Redirecionamos usuário para dashboard
@@ -57,6 +55,38 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
             if(!usuarioExiste){ //se nenhuma informação bateu
                 alert('Usuário não encontrado!')
             }
+        } catch {
+            alert('Erro!')
+        }
+    }
+
+    const usuarioLogout = async (user, id) =>{
+        user.usuarioAtivo = false
+
+        fetch(`http://localhost:3000/usuarios/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(() => {
+            console.log('Editado com sucesso!')
+        })
+        .catch(() => console.log('Erro ao editar!'))
+    }
+
+    ///// Logout /////
+    async function logout(id){
+        try{
+            debugger
+            const response = await fetch(`http://localhost:3000/usuarios/${id}`)
+            const dados = await response.json()
+
+            usuarioLogout(dados, id)
+            goLogin()
+            localStorage.clear()
+
         } catch {
             alert('Erro!')
         }
@@ -138,7 +168,7 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
     }
 
     return(
-        <UsuariosContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarios, login, 
+        <UsuariosContext.Provider value={{ usuarios, cadastrarUsuario, lerUsuarios, login, logout, 
         locais, cadastrarLocal, lerLocais, apagarLocal }}>
             { children }
         </UsuariosContext.Provider>

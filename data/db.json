@@ -99,7 +99,7 @@
       "complementoUsuario": "",
       "cidadeUsuario": "Florianópolis",
       "estadoUsuario": "SC",
-      "usuarioAtivo": true,
+      "usuarioAtivo": false,
       "id": 6
     },
     {
@@ -116,7 +116,7 @@
       "complementoUsuario": "Apto 03",
       "cidadeUsuario": "Soledade",
       "estadoUsuario": "RS",
-      "usuarioAtivo": true,
+      "usuarioAtivo": false,
       "id": 7
     }
   ],
