@@ -17,11 +17,7 @@ function Lista(){
 
     return(
         <div>
-            {/* <h2>Usuarios cadastrados</h2>*/}
-            {/* {!!locais && locais.map(local => (
-            <h3 key={local.id}>{local.id} - {local.nomeLocal}</h3>
-            ))}  */}
-
+            
             {!!locais && locais.map(dados => (
                 <CardLista dadosLista={dados} key={dados.id} 
                 onClickEditar={() => editar(dados.id)} 

@@ -1,81 +1,89 @@
-.containerLogin{
-    background-image: linear-gradient(to bottom, #757981,  #d9dce0);
+@media all{
+    .containerLogin{
+        background-color: #b1b5b9;    
+        width: 400px;
+        padding: 1em;
+        border: 1px solid black;
+        border-radius: 20px;    
+        margin: 2em auto;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-    width: 500px;
-    padding: 1em;
-    border: 1px solid black;
-    border-radius: 20px;    
-    margin: 2em auto;
+    .logoLogin{
+        margin: 1em 0;
+    }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .formLogin{
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+    }
+
+    .formLogin label{
+        text-align: left;
+        margin-left: 8px;
+    }
+
+    .formLogin input{
+        height: 32px;
+        border-radius: 4px;
+        border: 2px solid #29B473;
+        padding-left: 8px;
+        margin-bottom: 0.5em;
+    }
+
+    .formLogin input:hover{
+        border: 2px solid black;
+    }
+
+    .botaoLogin{
+        text-align: center;
+    }
+    
+    .linkLogin{
+        text-decoration: none;
+        color: #2E7D32;
+        font-weight: bold;
+    }
+
+    .linkLogin:hover{
+        font-size: 1.2em;
+    }
+
+    .msgErro{
+        font-size: 12px;
+        color: rgb(145, 3, 3);
+        margin-bottom: 0.5em;
+    }
+    
+    .containerSenha{
+        position: relative;
+        width: 260px;
+        height: 32px;
+        margin-bottom: 0.5em;
+    }
+    
+    .containerSenha input{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .iconeSenha{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
 }
 
-.logoLogin{
-    margin: 1em 0;
-}
-
-.formLogin{
-    display: flex;
-    flex-direction: column;
-    width: 260px;
-}
-
-.formLogin label{
-    text-align: left;
-    margin-left: 8px;
-}
-
-.formLogin input{
-    height: 32px;
-    border-radius: 4px;
-    border: 2px solid #29B473;
-    padding-left: 8px;
-    margin-bottom: 0.5em;
-}
-
-.formLogin input:hover{
-    border: 2px solid black;
-}
-
-.botaoLogin{
-    text-align: center;
-}
-
-.linkLogin{
-    text-decoration: none;
-    color: #2E7D32;
-    font-weight: bold;
-}
-
-.linkLogin:hover{
-    font-size: 1.2em;
-}
-
-.msgErro{
-    font-size: 12px;
-    color: rgb(145, 3, 3);
-    margin-bottom: 0.5em;
-}
-
-.containerSenha{
-    position: relative;
-    width: 260px;
-    height: 32px;
-    margin-bottom: 0.5em;
-}
-
-.containerSenha input{
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-}
-
-.iconeSenha{
-    position: absolute;
-    right: 10px;
-    top: 5px;
+@media (min-width: 769px) {
+    .containerLogin{
+        background-image: linear-gradient(to bottom, #757981,  #d9dce0);
+        width: 500px;
+    }
 }
