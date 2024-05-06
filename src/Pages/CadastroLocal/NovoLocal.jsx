@@ -47,7 +47,7 @@ function NovoLocal(){
     return(
         <div>
             <div className={styles.containerCadastroLugar}>
-                <h3>Preencha os campos abaixo para informar um lugar para prática livre de atividades físicas!</h3>
+                <h3>Contribua com nossa comunidade, preenchendo os campos abaixo!</h3>
 
                 <form className={styles.formCadastroLugar} onSubmit={handleSubmit(dadosForm)}>
                     <label htmlFor="nomeLocal" >Nome do local </label>
@@ -174,7 +174,7 @@ function NovoLocal(){
                         </div>
                         <div>
                             <input type="checkbox" name="ciclismo"value="Ciclismo"
-                                {...register("tipo")}
+                                {...register("tipo")}                     
                             />
                             <label htmlFor="tipo" className={styles.labelCheckbox}>Ciclismo</label>
                         </div>

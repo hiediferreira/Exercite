@@ -183,6 +183,24 @@
         "Skate"
       ],
       "id": 3
+    },
+    {
+      "nomeLocal": "Praia Brava",
+      "idUsuario": "Maria",
+      "latitude": "-27.39930",
+      "longitude": "-48.41293",
+      "cepLocal": "88056800",
+      "ruaLocal": "Avenida Tom Traugott Wildi",
+      "bairroLocal": "Praia Brava",
+      "numeroLocal": "",
+      "complementoLocal": "",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Ondas agitadas e praia tranquila.",
+      "tipo": [
+        "Ciclismo"
+      ],
+      "id": 4
     }
   ]
 }

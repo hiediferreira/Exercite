@@ -35,6 +35,11 @@
     border: 2px solid black;
 }
 
+.containerCadastroLugar>h3{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
 textarea{
     height: 140px;
     border-radius: 4px;

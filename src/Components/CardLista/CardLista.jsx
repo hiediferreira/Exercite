@@ -20,9 +20,10 @@ function CardLista({dadosLista, onClickEditar, onClickExcluir}){
                 <p className={styles.descricao}>{dadosLista.descricao}</p>
                 <p>Sugestões de atividades físicas nesse local:</p>
                 <ul type={"circle"}>
-                    {dadosLista.tipo.map((item, index) => (
+                    {dadosLista.tipo ? dadosLista.tipo.map((item, index) => (
                         <li key={index}>{item}</li>
-                    ))}
+                    )) : <li>Alongamento</li>}
+                    {/* Se o usuário não marcar nada, vou exibir Alongamento */}
                 </ul>
                 <div className={styles.divFlex}>
                     <img src="/Logo/local.png" alt="imagem-ilustrativa"  height={"50px"}/>
