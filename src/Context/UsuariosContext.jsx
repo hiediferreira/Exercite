@@ -16,11 +16,17 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
             const dados = await response.json()
 
             let usuarioExiste = false      //Até então, usuário não existe
+
             dados.map(user => {
                 if(user.email == email){   //Existe um usuário com esse e-mail??
                     usuarioExiste = true   //Se sim, agora o usuário existe e vamos verificar a senha
+                    
                     if(user.senha == senha){ //se a senha bater
-                        localStorage.setItem("usuarioAutenticado", true)  //Vamos salvar no localStorage
+                        
+                        localStorage.setItem("usuarioAutenticado", true)  //Salvar no localStorage
+                        localStorage.setItem("idUsuario", user.id) //Salvar no localStorage o id do usuario
+                        localStorage.setItem("nomeUsuario", user.nomeUsuario) //Salvar no localStorage o nome do usuario para eu pegar quando mostrar os cards
+                        
                         window.location.href = "/"  //Redirecionamos usuário para dashboard
                         return
                     }

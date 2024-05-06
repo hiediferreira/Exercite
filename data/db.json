@@ -138,8 +138,8 @@
     {
       "nomeLocal": "Praia Selvagem",
       "idUsuario": "Aurora",
-      "latitude": "-48.2222222",
-      "longitude": "-27.2222222",
+      "latitude": "-27.57487",
+      "longitude": "-48.50843",
       "cepLocal": "88056800",
       "ruaLocal": "Avenida Tom Traugott Wildi",
       "bairroLocal": "Praia Brava",
@@ -158,8 +158,8 @@
     {
       "nomeLocal": "Beira mar Norte",
       "idUsuario": "Aurora",
-      "latitude": "-1,00",
-      "longitude": "-2,00",
+      "latitude": "-27.58628",
+      "longitude": "-48.555314",
       "cepLocal": "99300000",
       "ruaLocal": "Rua do Governador",
       "bairroLocal": "Centro",
@@ -180,8 +180,8 @@
     {
       "nomeLocal": "Campo do teste",
       "idUsuario": "Hiédi",
-      "latitude": "-2,333",
-      "longitude": "-2,333",
+      "latitude": "-27.44429",
+      "longitude": "-48.37677",
       "cepLocal": "88058313",
       "ruaLocal": "Servidão Saguá",
       "bairroLocal": "Ingleses do Rio Vermelho",
