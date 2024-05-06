@@ -1,0 +1,14 @@
+.containerErro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.logo{
+    color: var(--verdeLogo);
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
