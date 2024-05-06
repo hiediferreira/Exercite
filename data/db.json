@@ -101,6 +101,23 @@
       "estadoUsuario": "SC",
       "usuarioAtivo": true,
       "id": 6
+    },
+    {
+      "nomeUsuario": "Maria de Fátima",
+      "sexo": "Feminino",
+      "cpf": "12345678911",
+      "dataNasc": "1964-09-06",
+      "email": "maria@email.com",
+      "senha": "123456",
+      "cepUsuario": "99300000",
+      "ruaUsuario": "Cel Falckembac",
+      "bairroUsuario": "Centro",
+      "numeroUsuario": "253",
+      "complementoUsuario": "Apto 03",
+      "cidadeUsuario": "Soledade",
+      "estadoUsuario": "RS",
+      "usuarioAtivo": true,
+      "id": 7
     }
   ],
   "locais": [
