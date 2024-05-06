@@ -2,6 +2,6 @@
     width: 80vw;
     height: 80vh;
     margin: auto;
-    border: 1px solid black;
+    border: 3px solid var(--verdeLogo);
 }
 
