@@ -99,7 +99,7 @@
       "complementoUsuario": "",
       "cidadeUsuario": "Florianópolis",
       "estadoUsuario": "SC",
-      "usuarioAtivo": false,
+      "usuarioAtivo": true,
       "id": 6
     },
     {
@@ -116,7 +116,7 @@
       "complementoUsuario": "Apto 03",
       "cidadeUsuario": "Soledade",
       "estadoUsuario": "RS",
-      "usuarioAtivo": false,
+      "usuarioAtivo": true,
       "id": 7
     }
   ],
@@ -141,6 +141,71 @@
         "Surf"
       ],
       "id": 1
+    },
+    {
+      "nomeLocal": "Beira Mar Norte",
+      "latitude": "-27.58628",
+      "longitude": "-48.55314",
+      "cepLocal": "88010400",
+      "ruaLocal": "Praça Quinze de Novembro",
+      "bairroLocal": "Centro",
+      "numeroLocal": "",
+      "complementoLocal": "",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Calçadão, ciclovia, kiosques e uma vista incrível.",
+      "tipo": [
+        "Alongamento",
+        "Caminhada",
+        "Ciclismo",
+        "Corrida",
+        "Musculação",
+        "Skate"
+      ],
+      "idUsuario": "Aurora",
+      "id": 2
+    },
+    {
+      "nomeLocal": "Canto Sul dos Ingleses",
+      "latitude": "-27.44429",
+      "longitude": "-48.37677",
+      "cepLocal": "88058600",
+      "ruaLocal": "Estrada Dom João Becker",
+      "bairroLocal": "Ingleses do Rio Vermelho",
+      "numeroLocal": "",
+      "complementoLocal": "Praia",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Praia belíssima! Perfeita para uma caminhada matinal.",
+      "tipo": [
+        "Alongamento",
+        "Caminhada",
+        "Ciclismo",
+        "Corrida",
+        "Yoga"
+      ],
+      "idUsuario": "Aurora",
+      "id": 3
+    },
+    {
+      "nomeLocal": "Jardim Botânico de Florianópolis",
+      "latitude": "-27.57771",
+      "longitude": "-48.50903",
+      "cepLocal": "88034000",
+      "ruaLocal": "Rodovia Admar Gonzaga",
+      "bairroLocal": "Itacorubi",
+      "numeroLocal": "",
+      "complementoLocal": "",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Parque bem arborizado, bastante bonito e aconchegante! Árvores frutíferas e um belo lago. Perfeito para um piquenique! ",
+      "tipo": [
+        "Alongamento",
+        "Caminhada",
+        "Yoga"
+      ],
+      "idUsuario": "Aurora",
+      "id": 4
     }
   ]
 }

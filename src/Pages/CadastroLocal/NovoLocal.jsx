@@ -141,7 +141,7 @@ function NovoLocal(){
                     <textarea  type="text" placeholder="Descreva brevemente o lugar e a atividade física que pode ser praticada nesse local." name='descricao'
                         {...register("descricao", {
                             required: false,
-                            maxLength: {value:100, message:"Máximo 100 caracteres"}
+                            maxLength: {value:200, message:"Máximo 100 caracteres"}
                         })}>                                         
                     </textarea>
                     {errors?.descricao && <p className={styles.msgErro}><WarningAmberIcon fontSize="small" sx={{"mr":1}}/>{errors.descricao.message}</p>}
