@@ -9,10 +9,21 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
         window.location.href = "/login"  
     }
 
-    const[auth, setAuth] = useState({
-        usuario: {},
-        usuarioAtivo: false
-    })
+    const usuarioLogado = async (user, id) =>{
+        user.usuarioAtivo = true
+
+        fetch(`http://localhost:3000/usuarios/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(() => {
+            console.log('Editado com sucesso!')
+        })
+        .catch(() => console.log('Erro ao editar!'))
+    }
 
     ///// Login /////
     async function login(email, senha){
@@ -32,8 +43,10 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
                         localStorage.setItem("idUsuario", user.id) //Salvar no localStorage o id do usuario
                         localStorage.setItem("nomeUsuario", user.nomeUsuario) //Salvar no localStorage o nome do usuario para eu pegar quando mostrar os cards
 
-                        setAuth({ user,  usuarioAtivo: true }) //Quero alterar a propriedade usuarioAtivo do db.json
-                        
+                        debugger
+
+                        usuarioLogado(user, user.id)
+
                         window.location.href = "/"  //Redirecionamos usuário para dashboard
                         return
                     }
@@ -51,6 +64,8 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
 
     //// CADASTRAR ////
     function cadastrarUsuario(novoUsuario){
+        novoUsuario.usuarioAtivo = false //Inicia com o usuário inativo
+
         fetch("http://localhost:3000/usuarios", {
             method: 'POST',  //adicionar usuário à API
             body: JSON.stringify(novoUsuario),            //converte para Json        

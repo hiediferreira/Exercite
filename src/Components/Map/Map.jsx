@@ -19,11 +19,9 @@ function Mapa(){
         return {
             lat: Number(item.latitude),
             long: Number(item.longitude),
-            popUp: `${item.tipo}`
+            popUp: `${item.descricao}`
         }
     })
-    
-    console.log(markers);
 
     return(
         <MapContainer center={[-27.59344, -48.56159]} zoom={13} className={styles.containerMap}>
