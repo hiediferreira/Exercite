@@ -10,3 +10,18 @@
     text-decoration: underline var(--verdeLogo) 3px;
 }
 
+.botaoLogout{
+    background-color: #29B473;
+    font-weight: bold;
+    width: 80px;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 16px;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.botaoLogout:hover{
+    background-color: #1c7d50;
+}
+
