@@ -1,7 +1,6 @@
 {
   "usuarios": [
     {
-      "id": 1,
       "nomeUsuario": "Manoel Daniel Julio Aparício",
       "sexo": "Masculino",
       "cpf": "79929130195",
@@ -15,10 +14,10 @@
       "bairroUsuario": "Guaribas",
       "cidadeUsuario": "Arapiraca",
       "estadoUsuario": "AL",
-      "usuarioAtivo": false
+      "usuarioAtivo": false,
+      "id": 1
     },
     {
-      "id": 2,
       "nomeUsuario": "Danilo Alexandre Brito",
       "sexo": "Masculino",
       "cpf": "09771132210",
@@ -32,10 +31,10 @@
       "bairroUsuario": "Imbiribeira",
       "cidadeUsuario": "Recife",
       "estadoUsuario": "PE",
-      "usuarioAtivo": false
+      "usuarioAtivo": false,
+      "id": 2
     },
     {
-      "id": 3,
       "nomeUsuario": "Jenifer Mariah Gonçalves",
       "sexo": "Feminino",
       "cpf": "17574211302",
@@ -49,10 +48,10 @@
       "bairroUsuario": "Loteamento Residencial Vista Verde",
       "cidadeUsuario": "Cruzeiro",
       "estadoUsuario": "SP",
-      "usuarioAtivo": false
+      "usuarioAtivo": false,
+      "id": 3
     },
     {
-      "id": 4,
       "nomeUsuario": "Carolina Hadassa Emanuelly Nunes",
       "sexo": "Feminino",
       "cpf": "78506673011",
@@ -66,10 +65,10 @@
       "bairroUsuario": "Boa Vista",
       "cidadeUsuario": "São Gonçalo",
       "estadoUsuario": "RJ",
-      "usuarioAtivo": false
+      "usuarioAtivo": false,
+      "id": 4
     },
     {
-      "id": 5,
       "nomeUsuario": "Felipe Daniel Marcos Vinicius Mendes",
       "sexo": "Masculino",
       "cpf": "62140929551",
@@ -83,7 +82,8 @@
       "bairroUsuario": "Igara",
       "cidadeUsuario": "Canoas",
       "estadoUsuario": "RS",
-      "usuarioAtivo": false
+      "usuarioAtivo": false,
+      "id": 5
     },
     {
       "nomeUsuario": "Aurora",
@@ -99,39 +99,25 @@
       "complementoUsuario": "",
       "cidadeUsuario": "Florianópolis",
       "estadoUsuario": "SC",
+      "usuarioAtivo": true,
       "id": 6
     },
     {
-      "nomeUsuario": "Olívia",
+      "nomeUsuario": "Maria de Fátima",
       "sexo": "Feminino",
       "cpf": "12345678911",
-      "dataNasc": "2023-01-20",
-      "email": "olivia@email.com",
-      "senha": "99999jffhfnf",
-      "cepUsuario": "88058313",
-      "ruaUsuario": "Servidão Saguá",
-      "bairroUsuario": "Ingleses do Rio Vermelho",
-      "numeroUsuario": "171",
-      "complementoUsuario": "Apto 2",
-      "cidadeUsuario": "Florianópolis",
-      "estadoUsuario": "SC",
+      "dataNasc": "1964-09-06",
+      "email": "maria@email.com",
+      "senha": "123456",
+      "cepUsuario": "99300000",
+      "ruaUsuario": "Cel Falckembac",
+      "bairroUsuario": "Centro",
+      "numeroUsuario": "253",
+      "complementoUsuario": "Apto 03",
+      "cidadeUsuario": "Soledade",
+      "estadoUsuario": "RS",
+      "usuarioAtivo": true,
       "id": 7
-    },
-    {
-      "nomeUsuario": "User",
-      "sexo": "Masculino",
-      "cpf": "01223659888",
-      "dataNasc": "2012-12-12",
-      "email": "user@email.com",
-      "senha": "8d5f5f5fg5gg1g",
-      "cepUsuario": "69008410",
-      "ruaUsuario": "Rua 1",
-      "bairroUsuario": "Colônia Antônio Aleixo",
-      "numeroUsuario": "0",
-      "complementoUsuario": "",
-      "cidadeUsuario": "Manaus",
-      "estadoUsuario": "AM",
-      "id": 8
     }
   ],
   "locais": [
