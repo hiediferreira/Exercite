@@ -124,7 +124,7 @@ export const UsuariosContextProvider = ({ children }) => {  //Cria o provider
         .catch((erro) => console.log(erro))
     }
 
-    /////////////   REFERENTE AOS LOCAIS   /////////////
+    /////////////   REFERENTE AOS LOCAIS   //////////////////////////////////////////////////
      ///// Função para redirecinar o usuário para dashboard /////
     function goHome(){
         window.location.href = "/"  

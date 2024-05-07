@@ -14,14 +14,6 @@ function Dashboard() {
     const numUsuarios = usuarios.length
     const numLocais = locais.length
 
-    const markers = locais.map(item => {
-        return {
-            lat: Number(item.latitude),
-            long: Number(item.longitude),
-            popUp: `${item.descricao}`
-        }
-    })
-
     const ativos = usuarios.filter(value =>{
         return value.usuarioAtivo == true
     })
@@ -78,6 +70,42 @@ function Dashboard() {
                     <Link to={'/novoLocal'} className={styles.link}>Cadastrar Novo Local!</Link>
                 </p>
             </div>
+
+            <h1 style={{textAlign: "center"}}><span style={{color: "var(--verdeLogo)" }}><em>Exercite</em></span> essa ideia e junte-se aos nossos usuarios!</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Usuario</th>
+                        <th>Cidade/UF</th>
+                        <th>e-mail</th>
+                    </tr>
+                </thead>
+
+                <tbody> 
+                    {usuarios ? usuarios.map(user => (
+                        <tr key={user.id}>
+                            <td>{user.id}</td>
+                            <td>{user.nomeUsuario}</td>
+                            <td>{user.cidadeUsuario}/{user.estadoUsuario}</td>
+                            <td>{user.email}</td>
+                        </tr>
+                    )) : 
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>     
+            </table>
+
+
+
+
+
         </div>
     )
 }

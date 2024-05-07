@@ -99,7 +99,7 @@
       "complementoUsuario": "",
       "cidadeUsuario": "Florianópolis",
       "estadoUsuario": "SC",
-      "usuarioAtivo": false,
+      "usuarioAtivo": true,
       "id": 6
     },
     {
@@ -135,6 +135,23 @@
       "estadoUsuario": "SC",
       "usuarioAtivo": false,
       "id": 8
+    },
+    {
+      "nomeUsuario": "Olívia da Silva",
+      "sexo": "Feminino",
+      "cpf": "12345678911",
+      "dataNasc": "1989-08-15",
+      "email": "olivia@email.com",
+      "senha": "olivia123",
+      "cepUsuario": "88058313",
+      "ruaUsuario": "Servidão Saguá",
+      "bairroUsuario": "Ingleses do Rio Vermelho",
+      "numeroUsuario": "1232",
+      "complementoUsuario": "",
+      "cidadeUsuario": "Florianópolis",
+      "estadoUsuario": "SC",
+      "usuarioAtivo": false,
+      "id": 9
     }
   ],
   "locais": [
@@ -244,6 +261,26 @@
       ],
       "idUsuario": "Hiédi Ferreira",
       "id": 5
+    },
+    {
+      "nomeLocal": "Praia de Canajure!",
+      "latitude": "-27.42669",
+      "longitude": "-48.47803",
+      "cepLocal": "88054600",
+      "ruaLocal": "Rodovia Tertuliano Brito Xavier",
+      "bairroLocal": "Canasvieiras",
+      "numeroLocal": "",
+      "complementoLocal": "Praia",
+      "cidadeLocal": "Florianópolis",
+      "estadoLocal": "SC",
+      "descricao": "Belíssima praia!",
+      "tipo": [
+        "Alongamento",
+        "Caminhada",
+        "Yoga"
+      ],
+      "idUsuario": "Olívia da Silva",
+      "id": 6
     }
   ]
 }
